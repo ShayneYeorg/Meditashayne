@@ -37,11 +37,11 @@
 
 /* Begin PBXFileReference section */
 		34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		34F1FDF41C5EF35F00633BD9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		34F1FDF51C5EF35F00633BD9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
+		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
+		34F1FDF41C5EF35F00633BD9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../ViewController.h; sourceTree = "<group>"; };
+		34F1FDF51C5EF35F00633BD9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../ViewController.m; sourceTree = "<group>"; };
 		34F1FDF81C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		34F1FDFB1C5EF36000633BD9 /* Meditashayne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meditashayne.xcdatamodel; sourceTree = "<group>"; };
 		34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -103,15 +103,7 @@
 		34F1FDED1C5EF35F00633BD9 /* Meditashayne */ = {
 			isa = PBXGroup;
 			children = (
-				34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */,
-				34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */,
-				34F1FDF41C5EF35F00633BD9 /* ViewController.h */,
-				34F1FDF51C5EF35F00633BD9 /* ViewController.m */,
-				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
-				34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */,
-				34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */,
-				34F1FE021C5EF36000633BD9 /* Info.plist */,
-				34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */,
+				34F1FE241C5EFA8200633BD9 /* Main */,
 				34F1FDEE1C5EF35F00633BD9 /* Supporting Files */,
 			);
 			path = Meditashayne;
@@ -120,7 +112,10 @@
 		34F1FDEE1C5EF35F00633BD9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				34F1FDEF1C5EF35F00633BD9 /* main.m */,
+				34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */,
+				34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */,
+				34F1FE021C5EF36000633BD9 /* Info.plist */,
+				34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -141,6 +136,27 @@
 				34F1FE181C5EF36000633BD9 /* Info.plist */,
 			);
 			path = MeditashayneUITests;
+			sourceTree = "<group>";
+		};
+		34F1FE241C5EFA8200633BD9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				34F1FDEF1C5EF35F00633BD9 /* main.m */,
+				34F1FDF41C5EF35F00633BD9 /* ViewController.h */,
+				34F1FDF51C5EF35F00633BD9 /* ViewController.m */,
+				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
+				34F1FE251C5EFA8200633BD9 /* Main */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		34F1FE251C5EFA8200633BD9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */,
+				34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +334,7 @@
 				34F1FDF81C5EF36000633BD9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */ = {
