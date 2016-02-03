@@ -94,7 +94,7 @@
     NSInteger limit = 5;
     if (loadType == LoadType_Load_More) {
         offset = 5;
-        limit = INTMAX_MAX;
+        limit = 10;
     }
     [request setFetchLimit:limit];
     [request setFetchOffset:offset];

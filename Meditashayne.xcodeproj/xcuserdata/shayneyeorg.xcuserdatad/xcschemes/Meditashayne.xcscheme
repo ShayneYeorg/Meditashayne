@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34F1FDEA1C5EF35F00633BD9"
-               BuildableName = "Meditashayne.app"
+               BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
                BlueprintName = "Meditashayne"
-               ReferencedContainer = "container:Meditashayne.xcodeproj">
+               ReferencedContainer = "container:meditashayne.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34F1FE061C5EF36000633BD9"
-               BuildableName = "MeditashayneTests.xctest"
+               BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.xctest"
                BlueprintName = "MeditashayneTests"
-               ReferencedContainer = "container:Meditashayne.xcodeproj">
+               ReferencedContainer = "container:meditashayne.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "34F1FE111C5EF36000633BD9"
-               BuildableName = "MeditashayneUITests.xctest"
+               BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.xctest"
                BlueprintName = "MeditashayneUITests"
-               ReferencedContainer = "container:Meditashayne.xcodeproj">
+               ReferencedContainer = "container:meditashayne.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34F1FDEA1C5EF35F00633BD9"
-            BuildableName = "Meditashayne.app"
+            BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "Meditashayne"
-            ReferencedContainer = "container:Meditashayne.xcodeproj">
+            ReferencedContainer = "container:meditashayne.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34F1FDEA1C5EF35F00633BD9"
-            BuildableName = "Meditashayne.app"
+            BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "Meditashayne"
-            ReferencedContainer = "container:Meditashayne.xcodeproj">
+            ReferencedContainer = "container:meditashayne.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "34F1FDEA1C5EF35F00633BD9"
-            BuildableName = "Meditashayne.app"
+            BuildableName = "meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app"
             BlueprintName = "Meditashayne"
-            ReferencedContainer = "container:Meditashayne.xcodeproj">
+            ReferencedContainer = "container:meditashayne.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
