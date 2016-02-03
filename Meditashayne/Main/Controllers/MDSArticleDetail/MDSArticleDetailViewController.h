@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Article+CoreDataProperties.h"
 
 @interface MDSArticleDetailViewController : UIViewController
+
+@property (strong, nonatomic) Article *alteringArticle;//正在修改的文章，编辑状态下才有值
 
 @end

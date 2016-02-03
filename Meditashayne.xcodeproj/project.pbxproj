@@ -11,6 +11,8 @@
 		3413B6A21C61985A000B2AB7 /* MDSArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B69A1C61985A000B2AB7 /* MDSArticleDetailViewController.xib */; };
 		3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B69D1C61985A000B2AB7 /* MDSArticleListViewController.m */; };
 		3413B6A41C61985A000B2AB7 /* MDSArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */; };
+		3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */; };
+		3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A81C619BC7000B2AB7 /* Article.m */; };
 		34F1FDF01C5EF35F00633BD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDEF1C5EF35F00633BD9 /* main.m */; };
 		34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */; };
 		34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDF71C5EF36000633BD9 /* Main.storyboard */; };
@@ -46,6 +48,12 @@
 		3413B69C1C61985A000B2AB7 /* MDSArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleListViewController.h; sourceTree = "<group>"; };
 		3413B69D1C61985A000B2AB7 /* MDSArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleListViewController.m; sourceTree = "<group>"; };
 		3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleListViewController.xib; sourceTree = "<group>"; };
+		3413B6A51C619BC7000B2AB7 /* Article+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Article+CoreDataProperties.h"; sourceTree = "<group>"; };
+		3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Article+CoreDataProperties.m"; sourceTree = "<group>"; };
+		3413B6A71C619BC7000B2AB7 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		3413B6A81C619BC7000B2AB7 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSConstant.h; sourceTree = "<group>"; };
 		34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -122,6 +130,10 @@
 		3413B69F1C61985A000B2AB7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3413B6A51C619BC7000B2AB7 /* Article+CoreDataProperties.h */,
+				3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */,
+				3413B6A71C619BC7000B2AB7 /* Article.h */,
+				3413B6A81C619BC7000B2AB7 /* Article.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -169,6 +181,7 @@
 				34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */,
 				34F1FE021C5EF36000633BD9 /* Info.plist */,
 				34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */,
+				3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,6 +223,7 @@
 				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
 				34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */,
 				34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */,
+				3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -354,7 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */,
 				3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */,
+				3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */,
 				34F1FDFC1C5EF36000633BD9 /* Meditashayne.xcdatamodeld in Sources */,
 				34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */,
 				3413B6A11C61985A000B2AB7 /* MDSArticleDetailViewController.m in Sources */,
@@ -498,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Meditashayne/PrefixHeader.pch";
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
@@ -509,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Meditashayne/PrefixHeader.pch";
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
