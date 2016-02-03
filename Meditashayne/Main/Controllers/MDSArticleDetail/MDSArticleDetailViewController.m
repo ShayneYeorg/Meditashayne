@@ -24,11 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.appDelegate = kApp;
+    [self configDetails];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+#pragma mark - UI Configuration
+
+- (void)configDetails {
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.appDelegate = kApp;
 }
 
 #pragma mark - Core Data
@@ -46,7 +53,7 @@
     
     NSError *error = nil;
     if ([self.appDelegate.managedObjectContext save:&error]) {
-        if (error) NSLog(@"新增时发生错误:%@,%@",error,[error userInfo]);
+        if (error) MDSLog(@"新增时发生错误:%@,%@",error,[error userInfo]);
     }
     
     [self.navigationController popViewControllerAnimated:YES];
@@ -59,7 +66,7 @@
     article.content = [self.contentField.text dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *error = nil;
-    if ([self.appDelegate.managedObjectContext save:&error]) NSLog(@"修改成功");
+    if ([self.appDelegate.managedObjectContext save:&error]) MDSLog(@"修改成功");
     
     [self.navigationController popViewControllerAnimated:YES];
 }

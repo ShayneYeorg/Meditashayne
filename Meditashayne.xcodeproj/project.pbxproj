@@ -13,6 +13,9 @@
 		3413B6A41C61985A000B2AB7 /* MDSArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */; };
 		3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */; };
 		3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A81C619BC7000B2AB7 /* Article.m */; };
+		3413B6B01C61A558000B2AB7 /* MDSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6AF1C61A558000B2AB7 /* MDSTool.m */; };
+		3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */; };
+		3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */; };
 		34F1FDF01C5EF35F00633BD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDEF1C5EF35F00633BD9 /* main.m */; };
 		34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */; };
 		34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDF71C5EF36000633BD9 /* Main.storyboard */; };
@@ -54,6 +57,11 @@
 		3413B6A81C619BC7000B2AB7 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSConstant.h; sourceTree = "<group>"; };
+		3413B6AE1C61A558000B2AB7 /* MDSTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSTool.h; sourceTree = "<group>"; };
+		3413B6AF1C61A558000B2AB7 /* MDSTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSTool.m; sourceTree = "<group>"; };
+		3413B6B11C61AB34000B2AB7 /* MDSSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSSearchView.h; sourceTree = "<group>"; };
+		3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSSearchView.m; sourceTree = "<group>"; };
+		3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSSearchView.xib; sourceTree = "<group>"; };
 		34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -141,8 +149,20 @@
 		3413B6A01C61985A000B2AB7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3413B6B11C61AB34000B2AB7 /* MDSSearchView.h */,
+				3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */,
+				3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		3413B6AD1C61A518000B2AB7 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3413B6AE1C61A558000B2AB7 /* MDSTool.h */,
+				3413B6AF1C61A558000B2AB7 /* MDSTool.m */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		34F1FDE21C5EF35F00633BD9 = {
@@ -210,6 +230,7 @@
 				3413B6961C61985A000B2AB7 /* Controllers */,
 				3413B6A01C61985A000B2AB7 /* Views */,
 				3413B69F1C61985A000B2AB7 /* Models */,
+				3413B6AD1C61A518000B2AB7 /* Tools */,
 				34F1FE281C5F048900633BD9 /* Libs */,
 				34F1FE251C5EFA8200633BD9 /* Main */,
 			);
@@ -344,6 +365,7 @@
 				34F1FDFE1C5EF36000633BD9 /* Assets.xcassets in Resources */,
 				3413B6A41C61985A000B2AB7 /* MDSArticleListViewController.xib in Resources */,
 				34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */,
+				3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,12 +390,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */,
 				3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */,
 				3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */,
 				3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */,
 				34F1FDFC1C5EF36000633BD9 /* Meditashayne.xcdatamodeld in Sources */,
 				34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */,
 				3413B6A11C61985A000B2AB7 /* MDSArticleDetailViewController.m in Sources */,
+				3413B6B01C61A558000B2AB7 /* MDSTool.m in Sources */,
 				34F1FDF01C5EF35F00633BD9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

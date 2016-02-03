@@ -7,11 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
-typedef enum _LoadType {
-    LoadType_First_Load = 0,
-    LoadType_Load_More
-} LoadType;
+#import "MDSTool.h"
 
 //NSLog
 #ifdef DEBUG

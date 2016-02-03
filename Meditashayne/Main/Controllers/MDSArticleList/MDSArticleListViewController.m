@@ -9,7 +9,7 @@
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
 
-@interface MDSArticleListViewController ()
+@interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UITableView *tableView;
@@ -24,23 +24,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"列表";
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.appDelegate = kApp;
-    MDSLog(@"加载成功");
-    
+    [self configDeatails];
     [self configTableView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-
 }
 
 #pragma mark - UI Confiruration
 
+- (void)configDeatails {
+    self.title = @"Meditashayne";
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.appDelegate = kApp;
+}
+
 - (void)configTableView {
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height)];
+    [self.view addSubview:self.tableView];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+}
+
+#pragma mark - UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    MDSArticleDetailViewController *detailVC = [MDSArticleDetailViewController new];
+    detailVC.alteringArticle = self.articles[indexPath.row];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.articles.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
     
+    Article *article = self.articles[indexPath.row];
+    cell.textLabel.text = article.title;
+    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+    
+    return cell;
 }
 
 #pragma mark - Core Data
@@ -70,7 +102,7 @@
     //查询
     NSError *error = nil;
     NSMutableArray *articles = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (articles == nil) NSLog(@"查询所有数据时发生错误:%@,%@",error,[error userInfo]);
+    if (articles == nil) MDSLog(@"查询所有数据时发生错误:%@,%@",error,[error userInfo]);
     return articles;
 }
 
@@ -94,8 +126,15 @@
     //查询
     NSError *error = nil;
     NSMutableArray *articles = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (articles == nil) NSLog(@"根据条件查询时发生错误:%@,%@",error,[error userInfo]);
+    if (articles == nil) MDSLog(@"根据条件查询时发生错误:%@,%@",error,[error userInfo]);
     return articles;
+}
+
+//删除数据
+- (void)removeArticleFromDataSource:(Article *)article {
+    [self.appDelegate.managedObjectContext deleteObject:article];
+    NSError *error = nil;
+    if(![self.appDelegate.managedObjectContext save:&error]) MDSLog(@"删除数据时发生错误:%@,%@",error,[error userInfo]);
 }
 
 @end
