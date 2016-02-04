@@ -1,0 +1,18 @@
+//
+//  MDSPullAnimationView.h
+//  MDSPullUpToMore
+//
+//  Created by 杨淳引 on 16/2/3.
+//  Copyright © 2016年 shayneyeorg. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface MDSPullAnimationView : UIView
+
+@property (nonatomic,assign) BOOL hidesWhenStopped;
+
+- (void)startAnimation;
+- (void)stopAnimation;
+
+@end

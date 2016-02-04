@@ -8,6 +8,7 @@
 
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
+#import "MDSPullUpToMore.h"
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,6 +27,16 @@
     
     [self configDeatails];
     [self configTableView];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    //要放在viewDidAppear里
+    __weak MDSArticleListViewController *weakSelf = self;
+    [self.tableView addPullUpToMoreWithActionHandler:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf.tableView.pullUpToMoreView stopAnimation];
+        });
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +58,13 @@
     self.tableView.delegate = self;
 }
 
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.tableView) {
+        [scrollView didScroll];
+    }
+}
+
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -62,15 +80,18 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.articles.count;
+//    return self.articles.count;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
     
-    Article *article = self.articles[indexPath.row];
-    cell.textLabel.text = article.title;
-    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+//    Article *article = self.articles[indexPath.row];
+//    cell.textLabel.text = article.title;
+//    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+    
+    cell.textLabel.text = @"article";
     
     return cell;
 }
