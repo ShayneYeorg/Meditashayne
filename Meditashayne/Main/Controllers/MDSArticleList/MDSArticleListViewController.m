@@ -56,6 +56,7 @@
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.tableFooterView = [UIView new];
 }
 
 #pragma mark - UIScrollViewDelegate
@@ -80,18 +81,15 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    return self.articles.count;
-    return 20;
+    return self.articles.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
     
-//    Article *article = self.articles[indexPath.row];
-//    cell.textLabel.text = article.title;
-//    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
-    
-    cell.textLabel.text = @"article";
+    Article *article = self.articles[indexPath.row];
+    cell.textLabel.text = article.title;
+    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
     
     return cell;
 }
