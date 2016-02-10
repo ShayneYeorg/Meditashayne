@@ -18,6 +18,7 @@
 		3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */; };
 		3413B7441C62F738000B2AB7 /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */; };
 		3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */; };
+		34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA631C6AEE25002B891A /* MDSNavigationController.m */; };
 		34F1FDF01C5EF35F00633BD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDEF1C5EF35F00633BD9 /* main.m */; };
 		34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */; };
 		34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDF71C5EF36000633BD9 /* Main.storyboard */; };
@@ -68,6 +69,8 @@
 		3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
 		3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullUpToMore.h; sourceTree = "<group>"; };
 		3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullUpToMore.m; sourceTree = "<group>"; };
+		34A0BA621C6AEE25002B891A /* MDSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSNavigationController.h; sourceTree = "<group>"; };
+		34A0BA631C6AEE25002B891A /* MDSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSNavigationController.m; sourceTree = "<group>"; };
 		34F1FDEB1C5EF35F00633BD9 /* meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,7 @@
 			children = (
 				3413B69B1C61985A000B2AB7 /* MDSArticleList */,
 				3413B6971C61985A000B2AB7 /* MDSArticleDetail */,
+				34A0BA611C6AEDFE002B891A /* Other */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +177,15 @@
 				3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		34A0BA611C6AEDFE002B891A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				34A0BA621C6AEE25002B891A /* MDSNavigationController.h */,
+				34A0BA631C6AEE25002B891A /* MDSNavigationController.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 		34F1FDE21C5EF35F00633BD9 = {
@@ -400,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */,
 				3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */,
 				3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */,
 				3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */,

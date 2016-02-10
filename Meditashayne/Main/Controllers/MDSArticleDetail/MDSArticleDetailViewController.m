@@ -34,7 +34,6 @@
 #pragma mark - UI Configuration
 
 - (void)configDetails {
-    self.view.backgroundColor = [UIColor whiteColor];
     self.appDelegate = kApp;
 }
 

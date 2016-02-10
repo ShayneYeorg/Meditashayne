@@ -49,6 +49,13 @@
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
     self.appDelegate = kApp;
+    
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setFrame:CGRectMake(0, 0, 50, 20)];
+    [btn addTarget:self action:@selector(createArticle) forControlEvents:UIControlEventTouchUpInside];
+    [btn setTitle:@"新建" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 
 - (void)configTableView {
@@ -56,10 +63,19 @@
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+//    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
 }
 
+#pragma mark - Button Action
+
+- (void)createArticle {
+    MDSArticleDetailViewController *articleDetailViewController = [MDSArticleDetailViewController new];
+    [self.navigationController pushViewController:articleDetailViewController animated:YES];
+}
+
 #pragma mark - UIScrollViewDelegate
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if (scrollView == self.tableView) {
         [scrollView didScroll];

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MDSNavigationController.h"
 #import "MDSArticleListViewController.h"
 
 @interface AppDelegate ()
@@ -21,7 +22,7 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     
     MDSArticleListViewController * vc =[[MDSArticleListViewController alloc]init];
-    UINavigationController * nav =[[UINavigationController alloc] initWithRootViewController:vc];
+    MDSNavigationController * nav =[[MDSNavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
     
     [self.window makeKeyAndVisible];

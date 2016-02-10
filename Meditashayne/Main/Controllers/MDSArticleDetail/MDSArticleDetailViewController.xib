@@ -14,8 +14,45 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYC-MI-OEs">
+                    <rect key="frame" x="8" y="109" width="304" height="1"/>
+                    <color key="backgroundColor" red="0.78431372549019607" green="0.78431372549019607" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="ok2-fO-Kfr"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5U-5W-8x0">
+                    <rect key="frame" x="12" y="74" width="296" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QA4-R4-CVg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-Dc-uLD">
+                    <rect key="frame" x="8" y="115" width="304" height="445"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="276" y="283"/>
+            <constraints>
+                <constraint firstItem="cYC-MI-OEs" firstAttribute="top" secondItem="q5U-5W-8x0" secondAttribute="bottom" constant="5" id="8pX-wi-eIB"/>
+                <constraint firstItem="q5U-5W-8x0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="NRm-UL-xVL"/>
+                <constraint firstAttribute="bottom" secondItem="KUi-Dc-uLD" secondAttribute="bottom" constant="8" id="PN7-Gj-t7k"/>
+                <constraint firstAttribute="trailing" secondItem="cYC-MI-OEs" secondAttribute="trailing" constant="8" id="STX-be-mCQ"/>
+                <constraint firstAttribute="trailing" secondItem="q5U-5W-8x0" secondAttribute="trailing" constant="12" id="VBe-g5-spI"/>
+                <constraint firstItem="KUi-Dc-uLD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="f1a-tx-ckh"/>
+                <constraint firstItem="cYC-MI-OEs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ng5-rQ-NRx"/>
+                <constraint firstItem="q5U-5W-8x0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="t1D-h0-3r6"/>
+                <constraint firstAttribute="trailing" secondItem="KUi-Dc-uLD" secondAttribute="trailing" constant="8" id="uHb-Tt-Ihb"/>
+                <constraint firstItem="KUi-Dc-uLD" firstAttribute="top" secondItem="cYC-MI-OEs" secondAttribute="bottom" constant="5" id="yBd-Jb-dHB"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="52" y="283"/>
         </view>
     </objects>
 </document>
