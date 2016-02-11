@@ -7,6 +7,7 @@
 //
 
 #import "MDSArticleDetailViewController.h"
+#import "SVProgressHUD.h"
 
 @interface MDSArticleDetailViewController ()
 
@@ -84,7 +85,9 @@
 
 - (void)popBack:(id)sender {
     if (!self.titleField.text.length) {
-        MDSLog(@"标题不可为空");
+        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+        [SVProgressHUD showErrorWithStatus:@"标题不可为空"];
+        [self.titleField becomeFirstResponder];
         
     } else {
         [self.navigationController popViewControllerAnimated:YES];
@@ -126,16 +129,12 @@
     CGFloat keyboardHeight = keyboardRect.size.height + 5;
     
     //如果键盘挡住了随笔内容，将内容框缩短
-    if ([self.contentField isFirstResponder]) {
-        self.contentFieldBottomInset.constant = keyboardHeight;
-    }
+    self.contentFieldBottomInset.constant = keyboardHeight;
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     //将随笔内容框恢复原本高度
-    if ([self.contentField isFirstResponder]) {
-        self.contentFieldBottomInset.constant = 8;
-    }
+    self.contentFieldBottomInset.constant = 8;
 }
 
 #pragma mark - Core Data
