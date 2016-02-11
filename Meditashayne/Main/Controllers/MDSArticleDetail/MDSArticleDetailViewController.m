@@ -10,11 +10,15 @@
 
 @interface MDSArticleDetailViewController ()
 
-@property (strong, nonatomic) NSManagedObjectID *objectID;
+@property (strong, nonatomic) NSManagedObjectID *objectID;//当前正在编辑的随笔的id(新建随笔则无值)
 @property (weak, nonatomic) AppDelegate *appDelegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentFieldBottomInset;//随笔内容框与底部的距离
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *seperatorLineHeight;
+
 
 @end
 
@@ -26,12 +30,17 @@
     [super viewDidLoad];
     
     [self configBackBtn];
+    [self configHideKeyboardBtn];
     [self configDetails];
     [self setPopGestureEnabled:NO];
+    
+    [self addKeyboardNotification];
 }
 
 - (void)dealloc {
     MDSLog(@"dealloc");
+    
+    [self removeKeyboardNotification];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -48,6 +57,7 @@
 
 - (void)configDetails {
     self.appDelegate = kApp;
+    self.seperatorLineHeight.constant = 0.5;
 }
 
 - (void)configBackBtn {
@@ -61,6 +71,17 @@
     self.navigationItem.leftBarButtonItem = backItem;
 }
 
+- (void)configHideKeyboardBtn {
+    UIButton *hideKeyboardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    hideKeyboardBtn.frame = CGRectMake(0, 0, 44, 44);
+    [hideKeyboardBtn setTitle:@"收起" forState:UIControlStateNormal];
+    [hideKeyboardBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
+    hideKeyboardBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    [hideKeyboardBtn addTarget:self action:@selector(hideKeyboard:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *hideKeyboardItem = [[UIBarButtonItem alloc] initWithCustomView:hideKeyboardBtn];
+    self.navigationItem.rightBarButtonItem = hideKeyboardItem;
+}
+
 - (void)popBack:(id)sender {
     if (!self.titleField.text.length) {
         MDSLog(@"标题不可为空");
@@ -70,15 +91,50 @@
     }
 }
 
+- (void)hideKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
+
 #pragma mark - UITextFieldAction
 
 - (IBAction)editingChanged:(id)sender {
     [self setPopGestureEnabled:YES];
     
     NSString *newStr = [(UITextField *)sender text];
-//    MDSLog(@"%@", newStr);
     if (!newStr.length) {
         [self setPopGestureEnabled:NO];
+    }
+}
+
+#pragma mark - Keyboard Notification
+
+- (void)addKeyboardNotification {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)removeKeyboardNotification {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    //获取键盘的y值
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *value = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [value CGRectValue];
+    CGFloat keyboardHeight = keyboardRect.size.height + 5;
+    
+    //如果键盘挡住了随笔内容，将内容框缩短
+    if ([self.contentField isFirstResponder]) {
+        self.contentFieldBottomInset.constant = keyboardHeight;
+    }
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    //将随笔内容框恢复原本高度
+    if ([self.contentField isFirstResponder]) {
+        self.contentFieldBottomInset.constant = 8;
     }
 }
 

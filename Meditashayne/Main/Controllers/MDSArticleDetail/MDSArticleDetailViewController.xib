@@ -8,6 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDSArticleDetailViewController">
             <connections>
                 <outlet property="contentField" destination="KUi-Dc-uLD" id="njz-Z2-EPK"/>
+                <outlet property="contentFieldBottomInset" destination="PN7-Gj-t7k" id="UbX-LC-dQa"/>
+                <outlet property="seperatorLineHeight" destination="ok2-fO-Kfr" id="3QY-Qc-itc"/>
                 <outlet property="titleField" destination="q5U-5W-8x0" id="uCp-v4-65i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
