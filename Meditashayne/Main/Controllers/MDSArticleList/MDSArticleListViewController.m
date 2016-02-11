@@ -27,17 +27,22 @@
     
     [self configDeatails];
     [self configTableView];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     //要放在viewDidAppear里
     __weak MDSArticleListViewController *weakSelf = self;
-    [self.tableView addPullUpToMoreWithActionHandler:^{
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf.tableView.pullUpToMoreView stopAnimation];
-        });
-    }];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self.tableView addPullUpToMoreWithActionHandler:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [weakSelf.tableView.pullUpToMoreView stopAnimation];
+            });
+        }];
+    });
+    
+    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,9 +71,6 @@
     self.tableView.delegate = self;
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
-    
-    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
-    [self.tableView reloadData];
 }
 
 #pragma mark - Button Action
@@ -130,10 +132,10 @@
     
     //设置分页规则
     NSInteger offset = 0;
-    NSInteger limit = 5;
+    NSInteger limit = 8;
     if (loadType == LoadType_Load_More) {
-        offset = 5;
-        limit = 10;
+        offset = 8;
+        limit = 50;
     }
     [request setFetchLimit:limit];
     [request setFetchOffset:offset];
