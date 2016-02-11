@@ -8,7 +8,7 @@
 
 #import "MDSArticleDetailViewController.h"
 
-@interface MDSArticleDetailViewController () <UITextFieldDelegate>
+@interface MDSArticleDetailViewController ()
 
 @property (strong, nonatomic) NSManagedObjectID *objectID;
 @property (weak, nonatomic) AppDelegate *appDelegate;
@@ -27,10 +27,7 @@
     
     [self configBackBtn];
     [self configDetails];
-    
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-    }
+    [self setPopGestureEnabled:NO];
 }
 
 - (void)dealloc {
@@ -41,24 +38,17 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - UITextFieldDelegate
+#pragma mark - Private
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+- (void)setPopGestureEnabled:(BOOL)isEnabled {
     if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        self.navigationController.interactivePopGestureRecognizer.enabled = isEnabled;
     }
-    
-    return YES;
 }
-
-#pragma mark - UI Configuration
 
 - (void)configDetails {
     self.appDelegate = kApp;
-    self.titleField.delegate = self;
 }
-
-#pragma mark - Private
 
 - (void)configBackBtn {
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -77,6 +67,18 @@
         
     } else {
         [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+#pragma mark - UITextFieldAction
+
+- (IBAction)editingChanged:(id)sender {
+    [self setPopGestureEnabled:YES];
+    
+    NSString *newStr = [(UITextField *)sender text];
+//    MDSLog(@"%@", newStr);
+    if (!newStr.length) {
+        [self setPopGestureEnabled:NO];
     }
 }
 

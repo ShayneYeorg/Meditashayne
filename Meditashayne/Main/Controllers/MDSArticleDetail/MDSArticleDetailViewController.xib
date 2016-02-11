@@ -31,6 +31,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editingChanged:" destination="-1" eventType="editingChanged" id="T1B-c0-Thc"/>
+                    </connections>
                 </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-Dc-uLD">
                     <rect key="frame" x="8" y="115" width="304" height="445"/>
