@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDSArticleDetailViewController">
             <connections>
+                <outlet property="contentField" destination="KUi-Dc-uLD" id="njz-Z2-EPK"/>
+                <outlet property="titleField" destination="q5U-5W-8x0" id="uCp-v4-65i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,6 +40,7 @@
                 </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="cYC-MI-OEs" firstAttribute="top" secondItem="q5U-5W-8x0" secondAttribute="bottom" constant="5" id="8pX-wi-eIB"/>
                 <constraint firstItem="q5U-5W-8x0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="NRm-UL-xVL"/>
@@ -52,7 +55,7 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="52" y="283"/>
+            <point key="canvasLocation" x="130" y="199"/>
         </view>
     </objects>
 </document>

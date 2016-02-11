@@ -11,9 +11,10 @@
 @interface MDSArticleDetailViewController ()
 
 @property (strong, nonatomic) NSManagedObjectID *objectID;
-@property (strong, nonatomic) UITextField *titleFiled;
-@property (strong, nonatomic) UITextView *contentField;
 @property (weak, nonatomic) AppDelegate *appDelegate;
+
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet UITextView *contentField;
 
 @end
 
@@ -25,6 +26,33 @@
     [super viewDidLoad];
     
     [self configDetails];
+    
+//    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc]init];
+//    edgePanGesture.delegate = self;
+//    [self.view addGestureRecognizer:edgePanGesture];
+    
+    
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 44, 44);
+    
+//    [backBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
+    [backBtn setTitle:@"<返回" forState:UIControlStateNormal];
+    [backBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
+    backBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    [backBtn addTarget:self action:@selector(doBack:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
+
+- (void)doBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +69,7 @@
 
 //新增数据
 - (void)addArticle {
-    NSString *title = self.titleFiled.text;
+    NSString *title = self.titleField.text;
     NSString *content = self.contentField.text;
     
     Article *article = [NSEntityDescription insertNewObjectForEntityForName:@"Article" inManagedObjectContext:self.appDelegate.managedObjectContext];
@@ -61,7 +89,7 @@
 //修改数据
 - (void)alterArticle {
     Article *article = [self.appDelegate.managedObjectContext objectWithID:self.objectID];
-    article.title = self.titleFiled.text;
+    article.title = self.titleField.text;
     article.content = [self.contentField.text dataUsingEncoding:NSUTF8StringEncoding];
     
     NSError *error = nil;
