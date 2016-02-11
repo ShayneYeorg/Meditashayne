@@ -8,7 +8,7 @@
 
 #import "MDSArticleDetailViewController.h"
 
-@interface MDSArticleDetailViewController ()
+@interface MDSArticleDetailViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) NSManagedObjectID *objectID;
 @property (weak, nonatomic) AppDelegate *appDelegate;
@@ -25,44 +25,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self configBackBtn];
     [self configDetails];
     
-//    UIScreenEdgePanGestureRecognizer *edgePanGesture = [[UIScreenEdgePanGestureRecognizer alloc]init];
-//    edgePanGesture.delegate = self;
-//    [self.view addGestureRecognizer:edgePanGesture];
-    
-    
-    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    backBtn.frame = CGRectMake(0, 0, 44, 44);
-    
-//    [backBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [backBtn setTitle:@"<返回" forState:UIControlStateNormal];
-    [backBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
-    backBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
-    [backBtn addTarget:self action:@selector(doBack:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
-    self.navigationItem.leftBarButtonItem = backItem;
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
 }
 
-- (void)doBack:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-//        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
-//    }
+- (void)dealloc {
+    MDSLog(@"dealloc");
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+        self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+    }
+    
+    return YES;
+}
+
 #pragma mark - UI Configuration
 
 - (void)configDetails {
     self.appDelegate = kApp;
+    self.titleField.delegate = self;
+}
+
+#pragma mark - Private
+
+- (void)configBackBtn {
+    UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    backBtn.frame = CGRectMake(0, 0, 44, 44);
+    [backBtn setTitle:@"<返回" forState:UIControlStateNormal];
+    [backBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
+    backBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    [backBtn addTarget:self action:@selector(popBack:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithCustomView:backBtn];
+    self.navigationItem.leftBarButtonItem = backItem;
+}
+
+- (void)popBack:(id)sender {
+    if (!self.titleField.text.length) {
+        MDSLog(@"标题不可为空");
+        
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - Core Data
