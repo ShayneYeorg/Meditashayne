@@ -27,6 +27,7 @@
     
     [self configDeatails];
     [self configTableView];
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -65,6 +66,9 @@
     self.tableView.delegate = self;
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
+    
+    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
+    [self.tableView reloadData];
 }
 
 #pragma mark - Button Action

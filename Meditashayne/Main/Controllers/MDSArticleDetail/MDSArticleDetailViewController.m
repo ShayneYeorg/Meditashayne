@@ -41,6 +41,16 @@
 - (void)dealloc {
     MDSLog(@"dealloc");
     
+    if (self.alteringArticle) {
+        //修改随笔
+        [self alterArticle];
+        
+    } else {
+        //新增随笔
+        if (self.contentField.text.length) {
+            [self addArticle];
+        }
+    }
     [self removeKeyboardNotification];
 }
 
@@ -59,6 +69,22 @@
 - (void)configDetails {
     self.appDelegate = kApp;
     self.seperatorLineHeight.constant = 0.5;
+    
+    if (self.alteringArticle) {
+        //在修改的状态下
+        self.titleField.text = self.alteringArticle.title;
+        self.contentField.text = [[NSString alloc]initWithData:self.alteringArticle.content encoding:NSUTF8StringEncoding];
+        self.objectID = self.alteringArticle.objectID;
+        
+    } else {
+        //新建状态下
+        NSDate *now = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
+        [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"zh-CN"]];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        NSString *nowStr = [formatter stringFromDate:now];
+        self.titleField.text = nowStr;
+    }
 }
 
 - (void)configBackBtn {
