@@ -147,6 +147,7 @@ typedef NSUInteger MDSPullUpToMoreState;
     
     self.hidden = NO;
     if (self.scrollView.contentSize.height < self.scrollView.frame.size.height) {
+        MDSLog(@"self.scrollView.contentSize.height = %f, self.scrollView.frame.size.height = %f", self.scrollView.contentSize.height, self.scrollView.frame.size.height);
         self.hidden = YES;
         return;
     }

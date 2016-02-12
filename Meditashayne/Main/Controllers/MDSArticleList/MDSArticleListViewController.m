@@ -35,12 +35,14 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self.tableView addPullUpToMoreWithActionHandler:^{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.tableView.pullUpToMoreView stopAnimation];
+                [weakSelf.articles addObjectsFromArray:[weakSelf fetchArticlesFromDataSource:LoadType_First_Load]];
+                [weakSelf.tableView reloadData];
             });
         }];
     });
-    
+
     self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
     [self.tableView reloadData];
 }
@@ -71,6 +73,15 @@
     self.tableView.delegate = self;
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
+}
+
+#pragma mark - Getter
+
+- (NSMutableArray *)articles {
+    if (_articles == nil) {
+        _articles = [NSMutableArray array];
+    }
+    return _articles;
 }
 
 #pragma mark - Button Action
@@ -134,8 +145,7 @@
     NSInteger offset = 0;
     NSInteger limit = 8;
     if (loadType == LoadType_Load_More) {
-        offset = 8;
-        limit = 50;
+        offset = self.articles.count;
     }
     [request setFetchLimit:limit];
     [request setFetchOffset:offset];
