@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Article+CoreDataProperties.h"
+#import "MDSCoreDataAccess.h"
 
 @interface MDSArticleDetailViewController : UIViewController
 

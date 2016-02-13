@@ -22,6 +22,7 @@
 //App
 #define kAppTextCoclor RGB(50,50,50)
 #define kApp ((AppDelegate *)[UIApplication sharedApplication].delegate)
+#define kManagedObjectContext (((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext)
 
 //设备屏幕尺寸
 #define kScreen_Height ([UIScreen mainScreen].bounds.size.height)

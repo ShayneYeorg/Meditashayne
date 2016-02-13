@@ -12,7 +12,7 @@
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) AppDelegate *appDelegate;
+//@property (weak, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *articles;
 
@@ -30,6 +30,8 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated {
+    MDSLog(@"height = %f", self.tableView.contentSize.height);
+    
     //要放在viewDidAppear里
     __weak MDSArticleListViewController *weakSelf = self;
     static dispatch_once_t onceToken;
@@ -37,14 +39,13 @@
         [self.tableView addPullUpToMoreWithActionHandler:^{
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [weakSelf.tableView.pullUpToMoreView stopAnimation];
-                [weakSelf.articles addObjectsFromArray:[weakSelf fetchArticlesFromDataSource:LoadType_First_Load]];
+                [weakSelf.articles addObjectsFromArray:[MDSCoreDataAccess fetchArticlesWithOffset:8 limit:8]];
                 [weakSelf.tableView reloadData];
             });
         }];
     });
 
-    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
-    [self.tableView reloadData];
+    MDSLog(@"height = %f", self.tableView.contentSize.height);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -56,7 +57,7 @@
 - (void)configDeatails {
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
-    self.appDelegate = kApp;
+//    self.appDelegate = kApp;
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(0, 0, 50, 20)];
@@ -73,6 +74,8 @@
     self.tableView.delegate = self;
 //    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
+//    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
+    self.articles = [MDSCoreDataAccess fetchArticlesWithOffset:0 limit:8];
 }
 
 #pragma mark - Getter
@@ -128,64 +131,5 @@
 }
 
 #pragma mark - Core Data
-
-//查询所有数据
-- (NSMutableArray *)fetchArticlesFromDataSource:(LoadType)loadType {
-    //request和entity
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Article" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    [request setEntity:entity];
-    
-    //设置排序规则
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"createTime" ascending:NO];
-    NSArray * sortDescriptors = @[sort];
-    [request setSortDescriptors:sortDescriptors];
-    
-    //设置分页规则
-    NSInteger offset = 0;
-    NSInteger limit = 8;
-    if (loadType == LoadType_Load_More) {
-        offset = self.articles.count;
-    }
-    [request setFetchLimit:limit];
-    [request setFetchOffset:offset];
-    
-    //查询
-    NSError *error = nil;
-    NSMutableArray *articles = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (articles == nil) MDSLog(@"查询所有数据时发生错误:%@,%@",error,[error userInfo]);
-    return articles;
-}
-
-//根据参数查询数据
-- (NSMutableArray *)retrieveArticlesFromDataSource:(NSString *)searchStr {
-    //request和entity
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Article" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    [request setEntity:entity];
-    
-    //设置排序规则
-    NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"createTime" ascending:NO];
-    NSArray *sortDescriptors = @[sort];
-    [request setSortDescriptors:sortDescriptors];
-    
-    //设置查询条件
-    NSString *str = [NSString stringWithFormat:@"title LIKE '*%@*'", searchStr];
-    NSPredicate *pre = [NSPredicate predicateWithFormat:str];
-    [request setPredicate:pre];
-    
-    //查询
-    NSError *error = nil;
-    NSMutableArray *articles = [[self.appDelegate.managedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (articles == nil) MDSLog(@"根据条件查询时发生错误:%@,%@",error,[error userInfo]);
-    return articles;
-}
-
-//删除数据
-- (void)removeArticleFromDataSource:(Article *)article {
-    [self.appDelegate.managedObjectContext deleteObject:article];
-    NSError *error = nil;
-    if(![self.appDelegate.managedObjectContext save:&error]) MDSLog(@"删除数据时发生错误:%@,%@",error,[error userInfo]);
-}
 
 @end

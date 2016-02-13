@@ -18,6 +18,7 @@
 		3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */; };
 		3413B7441C62F738000B2AB7 /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */; };
 		3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */; };
+		342A55B91C6F2801000F1947 /* MDSCoreDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */; };
 		34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA631C6AEE25002B891A /* MDSNavigationController.m */; };
 		34A0BA681C6C7D45002B891A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA671C6C7D45002B891A /* SVProgressHUD.m */; };
 		34A0BA6B1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA6A1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m */; };
@@ -73,6 +74,8 @@
 		3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
 		3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullUpToMore.h; sourceTree = "<group>"; };
 		3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullUpToMore.m; sourceTree = "<group>"; };
+		342A55B71C6F2801000F1947 /* MDSCoreDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSCoreDataAccess.h; sourceTree = "<group>"; };
+		342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSCoreDataAccess.m; sourceTree = "<group>"; };
 		34A0BA621C6AEE25002B891A /* MDSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSNavigationController.h; sourceTree = "<group>"; };
 		34A0BA631C6AEE25002B891A /* MDSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSNavigationController.m; sourceTree = "<group>"; };
 		34A0BA661C6C7D45002B891A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 			children = (
 				3413B6AE1C61A558000B2AB7 /* MDSTool.h */,
 				3413B6AF1C61A558000B2AB7 /* MDSTool.m */,
+				342A55B71C6F2801000F1947 /* MDSCoreDataAccess.h */,
+				342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */,
 				3413B7401C62F737000B2AB7 /* MDSPullAnimationView.h */,
 				3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */,
 				3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */,
@@ -246,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */,
+				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
 				34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */,
 				34F1FE021C5EF36000633BD9 /* Info.plist */,
 				34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */,
@@ -289,7 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				34F1FDEF1C5EF35F00633BD9 /* main.m */,
-				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
 				34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */,
 				34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */,
 				3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */,
@@ -447,6 +452,7 @@
 				34A0BA6E1C6C7D8F002B891A /* SVRadialGradientLayer.m in Sources */,
 				3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */,
 				34A0BA6B1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m in Sources */,
+				342A55B91C6F2801000F1947 /* MDSCoreDataAccess.m in Sources */,
 				3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */,
 				34F1FDFC1C5EF36000633BD9 /* Meditashayne.xcdatamodeld in Sources */,
 				34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */,
@@ -496,7 +502,6 @@
 				34F1FDF81C5EF36000633BD9 /* Base */,
 			);
 			name = Main.storyboard;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */ = {

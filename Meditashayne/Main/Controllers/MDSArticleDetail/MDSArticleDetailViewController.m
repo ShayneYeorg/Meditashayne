@@ -12,7 +12,7 @@
 @interface MDSArticleDetailViewController ()
 
 @property (strong, nonatomic) NSManagedObjectID *objectID;//当前正在编辑的随笔的id(新建随笔则无值)
-@property (weak, nonatomic) AppDelegate *appDelegate;
+//@property (weak, nonatomic) AppDelegate *appDelegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
@@ -43,14 +43,15 @@
     
     if (self.alteringArticle) {
         //修改随笔
-        [self alterArticle];
+        [MDSCoreDataAccess updateArticleWithObjectID:self.objectID title:self.titleField.text content:self.contentField.text];
         
     } else {
         //新增随笔
         if (self.contentField.text.length) {
-            [self addArticle];
+            [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
         }
     }
+    
     [self removeKeyboardNotification];
 }
 
@@ -67,7 +68,7 @@
 }
 
 - (void)configDetails {
-    self.appDelegate = kApp;
+//    self.appDelegate = kApp;
     self.seperatorLineHeight.constant = 0.5;
     
     if (self.alteringArticle) {
@@ -164,36 +165,5 @@
 }
 
 #pragma mark - Core Data
-
-//新增数据
-- (void)addArticle {
-    NSString *title = self.titleField.text;
-    NSString *content = self.contentField.text;
-    
-    Article *article = [NSEntityDescription insertNewObjectForEntityForName:@"Article" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    
-    article.title = title;
-    article.content = [content dataUsingEncoding:NSUTF8StringEncoding];
-    article.createTime = [NSDate date];
-    
-    NSError *error = nil;
-    if ([self.appDelegate.managedObjectContext save:&error]) {
-        if (error) MDSLog(@"新增时发生错误:%@,%@",error,[error userInfo]);
-    }
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-//修改数据
-- (void)alterArticle {
-    Article *article = [self.appDelegate.managedObjectContext objectWithID:self.objectID];
-    article.title = self.titleField.text;
-    article.content = [self.contentField.text dataUsingEncoding:NSUTF8StringEncoding];
-    
-    NSError *error = nil;
-    if ([self.appDelegate.managedObjectContext save:&error]) MDSLog(@"修改成功");
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 @end
