@@ -10,6 +10,7 @@
 
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
+#import "MDSAritcleCell.h"
 #import "MDSPullUpToMore.h"
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -109,11 +110,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
+//    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
     
-    Article *article = self.articles[indexPath.row];
-    cell.textLabel.text = article.title;
-    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+//    Article *article = self.articles[indexPath.row];
+//    cell.textLabel.text = article.title;
+//    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+    
+    MDSAritcleCell *cell = [MDSAritcleCell cellWithTableView:tableView];
+    cell.article = self.articles[indexPath.row];
     
     return cell;
 }
