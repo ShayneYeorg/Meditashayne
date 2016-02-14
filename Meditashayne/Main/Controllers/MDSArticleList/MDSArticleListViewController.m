@@ -6,13 +6,14 @@
 //  Copyright © 2016年 shayneyeorg. All rights reserved.
 //
 
+#define kPageLimit 7
+
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
 #import "MDSPullUpToMore.h"
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
 
-//@property (weak, nonatomic) AppDelegate *appDelegate;
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *articles;
 
@@ -27,25 +28,8 @@
     
     [self configDeatails];
     [self configTableView];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    MDSLog(@"height = %f", self.tableView.contentSize.height);
     
-    //要放在viewDidAppear里
-    __weak MDSArticleListViewController *weakSelf = self;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        [self.tableView addPullUpToMoreWithActionHandler:^{
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [weakSelf.tableView.pullUpToMoreView stopAnimation];
-                [weakSelf.articles addObjectsFromArray:[MDSCoreDataAccess fetchArticlesWithOffset:8 limit:8]];
-                [weakSelf.tableView reloadData];
-            });
-        }];
-    });
-
-    MDSLog(@"height = %f", self.tableView.contentSize.height);
+    [self fetchArticles];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +41,6 @@
 - (void)configDeatails {
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
-//    self.appDelegate = kApp;
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(0, 0, 50, 20)];
@@ -68,14 +51,19 @@
 }
 
 - (void)configTableView {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, kScreen_Width, kScreen_Height)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, kScreen_Width, kScreen_Height-64)];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
-//    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;
     self.tableView.tableFooterView = [UIView new];
-//    self.articles = [self fetchArticlesFromDataSource:LoadType_First_Load];
-    self.articles = [MDSCoreDataAccess fetchArticlesWithOffset:0 limit:8];
+    
+    __weak MDSArticleListViewController *weakSelf = self;
+    [self.tableView addPullUpToMoreWithActionHandler:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [weakSelf fetchArticles];
+        });
+    }];
 }
 
 #pragma mark - Getter
@@ -131,5 +119,18 @@
 }
 
 #pragma mark - Core Data
+
+- (void)fetchArticles {
+    NSArray *articlesOfOnePage = [MDSCoreDataAccess fetchArticlesWithOffset:self.articles.count limit:kPageLimit];
+    [self.articles addObjectsFromArray:articlesOfOnePage];
+    [self.tableView reloadData];
+    
+    if (articlesOfOnePage.count < kPageLimit) {
+        self.tableView.pullUpToMoreView.canMore = NO;
+        
+    } else {
+        [self.tableView.pullUpToMoreView stopAnimation];
+    }
+}
 
 @end
