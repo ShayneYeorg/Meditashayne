@@ -94,7 +94,8 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    MDSAritcleCell *cell = (MDSAritcleCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
+    return cell.cellHeight;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,12 +111,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"ArticleCell"];
-    
-//    Article *article = self.articles[indexPath.row];
-//    cell.textLabel.text = article.title;
-//    cell.detailTextLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
-    
     MDSAritcleCell *cell = [MDSAritcleCell cellWithTableView:tableView];
     cell.article = self.articles[indexPath.row];
     

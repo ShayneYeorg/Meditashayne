@@ -12,7 +12,8 @@
 @interface MDSAritcleCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+@property (weak, nonatomic) IBOutlet UITextView *contentLabel;
 
 @end
 
@@ -26,8 +27,11 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil] lastObject];
     }
-    
     return cell;
+}
+
++ (CGFloat)cellHeightWithArticleModel:(Article *)article {
+    return 100;
 }
 
 #pragma mark - Setter
@@ -37,6 +41,8 @@
     
     self.titleLabel.text = article.title;
     self.contentLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
+    CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    self.cellHeight = size.height + 1;
 }
 
 @end
