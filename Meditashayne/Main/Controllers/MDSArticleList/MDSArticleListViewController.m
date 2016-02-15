@@ -44,7 +44,9 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btn setFrame:CGRectMake(0, 0, 50, 20)];
+    [btn setFrame:CGRectMake(0, 0, 44, 44)];
+    [btn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
+    btn.titleLabel.font = [UIFont systemFontOfSize:16.f];
     [btn addTarget:self action:@selector(createArticle) forControlEvents:UIControlEventTouchUpInside];
     [btn setTitle:@"新建" forState:UIControlStateNormal];
     [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -102,6 +104,7 @@
     MDSArticleDetailViewController *detailVC = [MDSArticleDetailViewController new];
     detailVC.alteringArticle = self.articles[indexPath.row];
     [self.navigationController pushViewController:detailVC animated:YES];
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - UITableViewDataSource

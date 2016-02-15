@@ -31,26 +31,15 @@
     [super viewDidLoad];
     
     [self configBackBtn];
-    [self configHideKeyboardBtn];
+    [self configSaveBtn];
     [self configDetails];
-    [self setPopGestureEnabled:NO];
+//    [self setPopGestureEnabled:NO];
     
     [self addKeyboardNotification];
 }
 
 - (void)dealloc {
     MDSLog(@"dealloc");
-    
-    if (self.alteringArticle) {
-        //修改随笔
-        [MDSCoreDataAccess updateArticleWithObjectID:self.objectID title:self.titleField.text content:self.contentField.text];
-        
-    } else {
-        //新增随笔
-        if (self.contentField.text.length) {
-            [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
-        }
-    }
     
     [self removeKeyboardNotification];
 }
@@ -61,14 +50,13 @@
 
 #pragma mark - Private
 
-- (void)setPopGestureEnabled:(BOOL)isEnabled {
-    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-        self.navigationController.interactivePopGestureRecognizer.enabled = isEnabled;
-    }
-}
+//- (void)setPopGestureEnabled:(BOOL)isEnabled {
+//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
+//        self.navigationController.interactivePopGestureRecognizer.enabled = isEnabled;
+//    }
+//}
 
 - (void)configDetails {
-//    self.appDelegate = kApp;
     self.seperatorLineHeight.constant = 0.5;
     
     if (self.alteringArticle) {
@@ -82,7 +70,7 @@
         NSDate *now = [NSDate date];
         NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
         [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"zh-CN"]];
-        [formatter setDateFormat:@"yyyy-MM-dd"];
+        [formatter setDateFormat:@"yyyy-MM-dd "];
         NSString *nowStr = [formatter stringFromDate:now];
         self.titleField.text = nowStr;
     }
@@ -99,42 +87,69 @@
     self.navigationItem.leftBarButtonItem = backItem;
 }
 
-- (void)configHideKeyboardBtn {
-    UIButton *hideKeyboardBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    hideKeyboardBtn.frame = CGRectMake(0, 0, 44, 44);
-    [hideKeyboardBtn setTitle:@"收起" forState:UIControlStateNormal];
-    [hideKeyboardBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
-    hideKeyboardBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
-    [hideKeyboardBtn addTarget:self action:@selector(hideKeyboard:) forControlEvents:UIControlEventTouchUpInside];
-    UIBarButtonItem *hideKeyboardItem = [[UIBarButtonItem alloc] initWithCustomView:hideKeyboardBtn];
-    self.navigationItem.rightBarButtonItem = hideKeyboardItem;
+- (void)configSaveBtn {
+    UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    saveBtn.frame = CGRectMake(0, 0, 44, 44);
+    [saveBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [saveBtn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
+    saveBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    [saveBtn addTarget:self action:@selector(saveArticle:) forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithCustomView:saveBtn];
+    self.navigationItem.rightBarButtonItem = saveItem;
 }
 
 - (void)popBack:(id)sender {
-    if (!self.titleField.text.length) {
-        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-        [SVProgressHUD showErrorWithStatus:@"标题不可为空"];
-        [self.titleField becomeFirstResponder];
-        
-    } else {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+//    if (!self.titleField.text.length) {
+//        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+//        [SVProgressHUD showErrorWithStatus:@"标题不可为空"];
+//        [self.titleField becomeFirstResponder];
+//        
+//    } else {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)hideKeyboard:(id)sender {
+- (void)saveArticle:(id)sender {
     [self.view endEditing:YES];
+    
+    //判断保存内容是否合法
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    if (!self.titleField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"标题不可为空"];
+        [self.titleField becomeFirstResponder];
+        return;
+        
+    } else if (!self.contentField.text.length) {
+        [SVProgressHUD showErrorWithStatus:@"内容不可为空"];
+        [self.contentField becomeFirstResponder];
+        return;
+    }
+    
+    //保存
+    if (self.alteringArticle) {
+        //修改随笔
+        [MDSCoreDataAccess updateArticleWithObjectID:self.objectID title:self.titleField.text content:self.contentField.text];
+        [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+        
+    } else {
+        //新增随笔
+        [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+    }
 }
 
 #pragma mark - UITextFieldAction
 
-- (IBAction)editingChanged:(id)sender {
-    [self setPopGestureEnabled:YES];
-    
-    NSString *newStr = [(UITextField *)sender text];
-    if (!newStr.length) {
-        [self setPopGestureEnabled:NO];
-    }
-}
+//- (IBAction)editingChanged:(id)sender {
+//    [self setPopGestureEnabled:YES];
+//    
+//    NSString *newStr = [(UITextField *)sender text];
+//    if (!newStr.length) {
+//        [self setPopGestureEnabled:NO];
+//    }
+//}
 
 #pragma mark - Keyboard Notification
 
@@ -163,7 +178,5 @@
     //将随笔内容框恢复原本高度
     self.contentFieldBottomInset.constant = 8;
 }
-
-#pragma mark - Core Data
 
 @end

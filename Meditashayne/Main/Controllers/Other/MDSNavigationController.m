@@ -38,7 +38,7 @@
 }
 
 - (void)resetPopGestureDelegate {
-    //由于随笔详情界面在navigation bar上使用自定义返回按钮，这里需要重新设置delegate，左滑才能生效
+    //由于随笔详情界面在navigation bar上使用自定义返回按钮，这里需要重新设置delegate，左划才能生效
     __weak typeof(self) weakSelf = self;
     if ([self respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.interactivePopGestureRecognizer.delegate = weakSelf;
