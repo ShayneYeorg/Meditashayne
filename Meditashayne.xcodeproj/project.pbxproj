@@ -90,7 +90,7 @@
 		34A0BA6C1C6C7D8F002B891A /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		34A0BA6D1C6C7D8F002B891A /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		34A0BA6F1C6C7E6A002B891A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		34F1FDEB1C5EF35F00633BD9 /* meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
 		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
 		34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
@@ -99,10 +99,10 @@
 		34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F1FE001C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F1FE021C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE071C5EF36000633BD9 /* meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneTests.m; sourceTree = "<group>"; };
 		34F1FE0D1C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE121C5EF36000633BD9 /* meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneUITests.m; sourceTree = "<group>"; };
 		34F1FE181C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34F1FE261C5F045700633BD9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -239,9 +239,9 @@
 		34F1FDEC1C5EF35F00633BD9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34F1FDEB1C5EF35F00633BD9 /* meditashayne.app */,
-				34F1FE071C5EF36000633BD9 /* meditashayne.xctest */,
-				34F1FE121C5EF36000633BD9 /* meditashayne.xctest */,
+				34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */,
+				34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */,
+				34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			);
 			name = Meditashayne;
 			productName = Meditashayne;
-			productReference = 34F1FDEB1C5EF35F00633BD9 /* meditashayne.app */;
+			productReference = 34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */;
 			productType = "com.apple.product-type.application";
 		};
 		34F1FE061C5EF36000633BD9 /* MeditashayneTests */ = {
@@ -354,7 +354,7 @@
 			);
 			name = MeditashayneTests;
 			productName = MeditashayneTests;
-			productReference = 34F1FE071C5EF36000633BD9 /* meditashayne.xctest */;
+			productReference = 34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		34F1FE111C5EF36000633BD9 /* MeditashayneUITests */ = {
@@ -372,7 +372,7 @@
 			);
 			name = MeditashayneUITests;
 			productName = MeditashayneUITests;
-			productReference = 34F1FE121C5EF36000633BD9 /* meditashayne.xctest */;
+			productReference = 34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -397,7 +397,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 34F1FDE61C5EF35F00633BD9 /* Build configuration list for PBXProject "meditashayne" */;
+			buildConfigurationList = 34F1FDE61C5EF35F00633BD9 /* Build configuration list for PBXProject "Meditashayne" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -614,7 +614,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
-				PRODUCT_NAME = meditashayne;
+				PRODUCT_NAME = Meditashayne;
 			};
 			name = Debug;
 		};
@@ -627,7 +627,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
-				PRODUCT_NAME = meditashayne;
+				PRODUCT_NAME = Meditashayne;
 			};
 			name = Release;
 		};
@@ -638,8 +638,8 @@
 				INFOPLIST_FILE = MeditashayneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneTests;
-				PRODUCT_NAME = meditashayne;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app/meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename";
+				PRODUCT_NAME = Meditashayne;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meditashayne.app/Meditashayne";
 			};
 			name = Debug;
 		};
@@ -650,8 +650,8 @@
 				INFOPLIST_FILE = MeditashayneTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneTests;
-				PRODUCT_NAME = meditashayne;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.app/meditashayne.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename.temp_caseinsensitive_rename";
+				PRODUCT_NAME = Meditashayne;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meditashayne.app/Meditashayne";
 			};
 			name = Release;
 		};
@@ -661,7 +661,7 @@
 				INFOPLIST_FILE = MeditashayneUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneUITests;
-				PRODUCT_NAME = meditashayne;
+				PRODUCT_NAME = Meditashayne;
 				TEST_TARGET_NAME = Meditashayne;
 				USES_XCTRUNNER = YES;
 			};
@@ -673,7 +673,7 @@
 				INFOPLIST_FILE = MeditashayneUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneUITests;
-				PRODUCT_NAME = meditashayne;
+				PRODUCT_NAME = Meditashayne;
 				TEST_TARGET_NAME = Meditashayne;
 				USES_XCTRUNNER = YES;
 			};
@@ -682,7 +682,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		34F1FDE61C5EF35F00633BD9 /* Build configuration list for PBXProject "meditashayne" */ = {
+		34F1FDE61C5EF35F00633BD9 /* Build configuration list for PBXProject "Meditashayne" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				34F1FE191C5EF36000633BD9 /* Debug */,
