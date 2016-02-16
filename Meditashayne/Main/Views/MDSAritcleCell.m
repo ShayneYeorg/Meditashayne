@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 //@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @property (weak, nonatomic) IBOutlet UITextView *contentLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *seperatorLineHeight;
+
 
 @end
 
@@ -26,13 +28,14 @@
     MDSAritcleCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil] lastObject];
+        cell.seperatorLineHeight.constant = 0.5;
     }
     return cell;
 }
 
-+ (CGFloat)cellHeightWithArticleModel:(Article *)article {
-    return 100;
-}
+//+ (CGFloat)cellHeightWithArticleModel:(Article *)article {
+//    return 100;
+//}
 
 #pragma mark - Setter
 

@@ -16,6 +16,6 @@
 @property (nonatomic, assign) CGFloat cellHeight;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
-+ (CGFloat)cellHeightWithArticleModel:(Article *)article;
+//+ (CGFloat)cellHeightWithArticleModel:(Article *)article;
 
 @end
