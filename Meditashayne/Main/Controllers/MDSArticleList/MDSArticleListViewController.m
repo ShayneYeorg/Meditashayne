@@ -6,7 +6,7 @@
 //  Copyright © 2016年 shayneyeorg. All rights reserved.
 //
 
-#define kPageLimit 7
+#define kPageLimit 10
 
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
@@ -27,9 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self configBarButton];
     [self configDeatails];
     [self configTableView];
-    
     [self fetchArticles];
 }
 
@@ -43,7 +43,9 @@
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
-    
+}
+
+- (void)configBarButton {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(0, 0, 44, 44)];
     [btn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
@@ -87,14 +89,6 @@
     [self.navigationController pushViewController:articleDetailViewController animated:YES];
 }
 
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.tableView) {
-        [scrollView didScroll];
-    }
-}
-
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,6 +114,14 @@
     cell.article = self.articles[indexPath.row];
     
     return cell;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.tableView) {
+        [scrollView didScroll];
+    }
 }
 
 #pragma mark - Core Data

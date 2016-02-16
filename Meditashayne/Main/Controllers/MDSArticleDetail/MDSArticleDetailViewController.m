@@ -12,7 +12,6 @@
 @interface MDSArticleDetailViewController ()
 
 @property (strong, nonatomic) NSManagedObjectID *objectID;//当前正在编辑的随笔的id(新建随笔则无值)
-//@property (weak, nonatomic) AppDelegate *appDelegate;
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
@@ -30,17 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configBackBtn];
-    [self configSaveBtn];
+    [self configBackBarBtn];
+    [self configSaveBarBtn];
     [self configDetails];
-//    [self setPopGestureEnabled:NO];
-    
     [self addKeyboardNotification];
 }
 
 - (void)dealloc {
     MDSLog(@"dealloc");
-    
     [self removeKeyboardNotification];
 }
 
@@ -49,12 +45,6 @@
 }
 
 #pragma mark - Private
-
-//- (void)setPopGestureEnabled:(BOOL)isEnabled {
-//    if ([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
-//        self.navigationController.interactivePopGestureRecognizer.enabled = isEnabled;
-//    }
-//}
 
 - (void)configDetails {
     self.seperatorLineHeight.constant = 0.5;
@@ -76,7 +66,7 @@
     }
 }
 
-- (void)configBackBtn {
+- (void)configBackBarBtn {
     UIButton *backBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     backBtn.frame = CGRectMake(0, 0, 44, 44);
     [backBtn setTitle:@"<返回" forState:UIControlStateNormal];
@@ -87,7 +77,7 @@
     self.navigationItem.leftBarButtonItem = backItem;
 }
 
-- (void)configSaveBtn {
+- (void)configSaveBarBtn {
     UIButton *saveBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     saveBtn.frame = CGRectMake(0, 0, 44, 44);
     [saveBtn setTitle:@"保存" forState:UIControlStateNormal];
@@ -99,15 +89,6 @@
 }
 
 - (void)popBack:(id)sender {
-//    if (!self.titleField.text.length) {
-//        [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-//        [SVProgressHUD showErrorWithStatus:@"标题不可为空"];
-//        [self.titleField becomeFirstResponder];
-//        
-//    } else {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    }
-    
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -139,17 +120,6 @@
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
     }
 }
-
-#pragma mark - UITextFieldAction
-
-//- (IBAction)editingChanged:(id)sender {
-//    [self setPopGestureEnabled:YES];
-//    
-//    NSString *newStr = [(UITextField *)sender text];
-//    if (!newStr.length) {
-//        [self setPopGestureEnabled:NO];
-//    }
-//}
 
 #pragma mark - Keyboard Notification
 

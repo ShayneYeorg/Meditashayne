@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class MDSSearchView;
+
+@protocol MDSSearchViewDelegate <NSObject>
+
+- (void)searchViewDidClicksSearchBtn:(MDSSearchView *)searchView;
+
+@end
+
 @interface MDSSearchView : UIView
 
 + (instancetype)loadFromNib;
