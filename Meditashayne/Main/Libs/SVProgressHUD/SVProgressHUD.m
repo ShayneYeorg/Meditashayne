@@ -970,7 +970,7 @@ static const CGFloat SVProgressHUDDefaultAnimationDuration = 0.15;
                              __strong SVProgressHUD *strongSelf = weakSelf;
                              if(strongSelf) {
                                  // Register for notification (e.g. screen rotation) to update the view
-                                 [strongSelf registerNotifications];
+//                                 [strongSelf registerNotifications];
                                  
                                  // Post notification to inform user
                                  [[NSNotificationCenter defaultCenter] postNotificationName:SVProgressHUDDidAppearNotification
