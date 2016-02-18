@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "MDSTool.h"
 
+//Notification
+#define ARTICLE_CREATE_NOTIFICATION  @"ARTICLE_CREATE_NOTIFICATION" //创建新随笔
+#define ARTICLE_ALTER_NOTIFICATION   @"ARTICLE_ALTER_NOTIFICATION" //修改随笔
+
 //NSLog
 #ifdef DEBUG
 #define MDSLog(format, ...) NSLog( @"<%@:(%d)> %@", [[NSString stringWithUTF8String:__FILE__] lastPathComponent], __LINE__, [NSString stringWithFormat:(format),  ##__VA_ARGS__] )

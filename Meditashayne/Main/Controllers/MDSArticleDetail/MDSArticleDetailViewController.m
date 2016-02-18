@@ -29,9 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self configViewDetails];
     [self configBackBarBtn];
     [self configSaveBarBtn];
-    [self configDetails];
     [self addKeyboardNotification];
 }
 
@@ -46,7 +46,7 @@
 
 #pragma mark - Private
 
-- (void)configDetails {
+- (void)configViewDetails {
     self.seperatorLineHeight.constant = 0.5;
     
     if (self.alteringArticle) {
@@ -117,6 +117,7 @@
     } else {
         //新增随笔
         [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ARTICLE_CREATE_NOTIFICATION object:nil userInfo:nil];
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
     }
 }

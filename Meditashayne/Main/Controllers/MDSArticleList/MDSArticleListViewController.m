@@ -27,10 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configBarButton];
-    [self configDeatails];
+    [self configViewDetails];
+    [self configCreateBarBtn];
     [self configTableView];
     [self fetchArticles];
+    
+    [self addNotifications];
+}
+
+- (void)dealloc {
+    [self removeNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,13 +45,13 @@
 
 #pragma mark - UI Confiruration
 
-- (void)configDeatails {
+- (void)configViewDetails {
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
-- (void)configBarButton {
+- (void)configCreateBarBtn {
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     [btn setFrame:CGRectMake(0, 0, 44, 44)];
     [btn setTitleColor:RGB(50, 50, 50) forState:UIControlStateNormal];
@@ -82,11 +88,30 @@
     return _articles;
 }
 
-#pragma mark - Button Action
+#pragma mark - Private
 
 - (void)createArticle {
     MDSArticleDetailViewController *articleDetailViewController = [MDSArticleDetailViewController new];
     [self.navigationController pushViewController:articleDetailViewController animated:YES];
+}
+
+- (void)addNotifications {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTableView) name:ARTICLE_CREATE_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCell:) name:ARTICLE_ALTER_NOTIFICATION object:nil];
+}
+
+- (void)removeNotifications {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_CREATE_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_ALTER_NOTIFICATION object:nil];
+}
+
+- (void)refreshTableView {
+    [self.articles removeAllObjects];
+    [self fetchArticles];
+}
+
+- (void)refreshCell:(NSNotification *)notification {
+    
 }
 
 #pragma mark - UITableViewDelegate
