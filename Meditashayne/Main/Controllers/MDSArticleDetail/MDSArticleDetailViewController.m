@@ -112,6 +112,8 @@
     if (self.alteringArticle) {
         //修改随笔
         [MDSCoreDataAccess updateArticleWithObjectID:self.objectID title:self.titleField.text content:self.contentField.text];
+        NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:self.alteringArticleIndexPath, @"indexPath", self.objectID, @"objectID", nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:ARTICLE_ALTER_NOTIFICATION object:nil userInfo:userInfo];
         [SVProgressHUD showSuccessWithStatus:@"修改成功"];
         
     } else {

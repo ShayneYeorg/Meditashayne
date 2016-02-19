@@ -111,7 +111,11 @@
 }
 
 - (void)refreshCell:(NSNotification *)notification {
-    
+    NSDictionary *userInfo = notification.userInfo;
+    Article *alteredArticle = [MDSCoreDataAccess fetchArticlesWithObjectID:userInfo[@"objectID"]];
+    NSIndexPath *alteredCellIndexPath = userInfo[@"indexPath"];
+    self.articles[alteredCellIndexPath.row] = alteredArticle;
+    [self.tableView reloadRowsAtIndexPaths:@[alteredCellIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
 #pragma mark - UITableViewDelegate
@@ -124,6 +128,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MDSArticleDetailViewController *detailVC = [MDSArticleDetailViewController new];
     detailVC.alteringArticle = self.articles[indexPath.row];
+    detailVC.alteringArticleIndexPath = indexPath;
     [self.navigationController pushViewController:detailVC animated:YES];
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

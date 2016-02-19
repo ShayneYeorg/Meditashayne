@@ -33,6 +33,12 @@
     return articles;
 }
 
+//根据objectID取出某条随笔
++ (Article *)fetchArticlesWithObjectID:(NSManagedObjectID *)objectID {
+    Article *article = [kManagedObjectContext objectWithID:objectID];
+    return article;
+}
+
 //根据参数查询数据
 + (NSMutableArray *)queryArticlesAccordingTo:(NSString *)searchStr {
     //request和entity

@@ -20,6 +20,13 @@
 + (NSMutableArray *)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit;
 
 /**
+ *  根据objectID取出某条随笔
+ *
+ *  @param objectID   取出数据的objectID
+ */
++ (Article *)fetchArticlesWithObjectID:(NSManagedObjectID *)objectID;
+
+/**
  *  根据条件查询随笔
  *
  *  @param searchStr  查询条件
