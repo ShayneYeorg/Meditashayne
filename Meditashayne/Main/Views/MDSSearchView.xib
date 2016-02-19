@@ -14,6 +14,10 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ADT-tV-FqS">
                     <rect key="frame" x="250" y="0.0" width="40" height="40"/>
                     <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="anj-mK-SDR" appends="YES" id="lgb-BZ-Wip"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zYM-PE-Gci">
                     <rect key="frame" x="0.0" y="40" width="320" height="105"/>
@@ -64,8 +68,14 @@
                 <outlet property="searchBtn" destination="p8w-XK-HVh" id="8QV-w8-rL0"/>
                 <outlet property="searchFieldBGView" destination="WNj-NB-leQ" id="KjO-5g-1Hs"/>
                 <outlet property="searchType" destination="DDl-qE-gPB" id="z2t-6a-yf3"/>
+                <outlet property="viewHandler" destination="ADT-tV-FqS" id="IWQ-WV-BY6"/>
             </connections>
-            <point key="canvasLocation" x="137" y="277.5"/>
+            <point key="canvasLocation" x="17" y="311.5"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="anj-mK-SDR">
+            <connections>
+                <action selector="panGestureAction:" destination="iN0-l3-epB" id="VgK-xj-CUo"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
 </document>

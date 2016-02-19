@@ -14,10 +14,12 @@
 #import "MDSSearchView.h"
 #import "MDSPullUpToMore.h"
 
-@interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource, MDSSearchViewDelegate>
 
-@property (strong, nonatomic) UITableView *tableView;
-@property (strong, nonatomic) NSMutableArray *articles;
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *articles;
+@property (nonatomic, strong) MDSSearchView *searchView;
+@property (nonatomic, assign) CGFloat searchViewInitialY;//searchView.frame初始的y值
 
 @end
 
@@ -37,7 +39,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    //xib的尺寸和实际屏幕尺寸可能会有区别，在这里才设置可避免控件尺寸受xib影响
+    //xib的尺寸和实际屏幕尺寸可能会有区别，在这里才加载可避免控件尺寸受xib影响
     [self configSearchView];
 }
 
@@ -86,8 +88,10 @@
 }
 
 - (void)configSearchView {
-    MDSSearchView *searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, 100, kScreen_Width, 145)];
-    [self.view addSubview:searchView];
+    self.searchViewInitialY = self.view.frame.size.height - 40;
+    self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 145)];
+    self.searchView.delegate = self;
+    [self.view addSubview:self.searchView];
 }
 
 #pragma mark - Private
@@ -127,6 +131,19 @@
         _articles = [NSMutableArray array];
     }
     return _articles;
+}
+
+#pragma mark - MDSSearchViewDelegate
+
+- (void)searchViewDidClicksSearchBtn:(MDSSearchView *)searchView {
+    
+}
+
+- (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance {
+    MDSLog(@"%f", dragDistance);
+    CGRect searchViewFrame = self.searchView.frame;
+    searchViewFrame.origin.y = self.searchViewInitialY + dragDistance;
+    self.searchView.frame = searchViewFrame;
 }
 
 #pragma mark - UITableViewDelegate
