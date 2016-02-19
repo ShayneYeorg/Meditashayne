@@ -60,11 +60,20 @@
 - (IBAction)panGestureAction:(id)sender {
     UIPanGestureRecognizer *gesture = (UIPanGestureRecognizer *)sender;
     CGPoint point = [gesture translationInView:self];
-    if (point.y != 0) {
-        if ([self.delegate respondsToSelector:@selector(searchView:didDragging:)]) {
-            [self.delegate searchView:self didDragging:point.y];
+    if (gesture.state == UIGestureRecognizerStateChanged) {
+        if (point.y != 0) {
+            if ([self.delegate respondsToSelector:@selector(searchView:didDragging:)]) {
+                [self.delegate searchView:self didDragging:point.y];
+            }
+        }
+        
+    } else if (gesture.state == UIGestureRecognizerStateEnded) {
+        if ([self.delegate respondsToSelector:@selector(searchViewDidEndDragging:)]) {
+            [self.delegate searchViewDidEndDragging:self];
         }
     }
+    
+    
 }
 
 - (IBAction)searchBtnClick:(id)sender {

@@ -14,6 +14,7 @@
 
 - (void)searchViewDidClicksSearchBtn:(MDSSearchView *)searchView;
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance;
+- (void)searchViewDidEndDragging:(MDSSearchView *)searchView ;
 
 @end
 

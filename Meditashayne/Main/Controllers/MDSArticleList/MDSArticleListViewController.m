@@ -20,6 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *articles;
 @property (nonatomic, strong) MDSSearchView *searchView;
 @property (nonatomic, assign) CGFloat searchViewInitialY;//searchView.frame初始的y值
+@property (nonatomic, assign) CGFloat searchViewLastY;//searchView.frame上次静止时的y值
 
 @end
 
@@ -89,6 +90,7 @@
 
 - (void)configSearchView {
     self.searchViewInitialY = self.view.frame.size.height - 40;
+    self.searchViewLastY = self.searchViewInitialY;
     self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 145)];
     self.searchView.delegate = self;
     [self.view addSubview:self.searchView];
@@ -140,10 +142,34 @@
 }
 
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance {
-    MDSLog(@"%f", dragDistance);
     CGRect searchViewFrame = self.searchView.frame;
-    searchViewFrame.origin.y = self.searchViewInitialY + dragDistance;
+    searchViewFrame.origin.y = self.searchViewLastY + dragDistance;
     self.searchView.frame = searchViewFrame;
+}
+
+- (void)searchViewDidEndDragging:(MDSSearchView *)searchView {
+    if (self.searchView.frame.origin.y > self.searchViewInitialY - 52) {
+        //searchView显示不足一半时，恢复隐藏状态
+        [UIView animateWithDuration:0.2 animations:^{
+            CGRect searchViewFrame = self.searchView.frame;
+            searchViewFrame.origin.y = self.searchViewInitialY;
+            self.searchView.frame = searchViewFrame;
+            
+        } completion:^(BOOL finished) {
+            self.searchViewLastY = self.searchView.frame.origin.y;
+        }];
+        
+    } else {
+        //searchView显示大于等于一半时，切换成显示状态
+        [UIView animateWithDuration:0.3 animations:^{
+            CGRect searchViewFrame = self.searchView.frame;
+            searchViewFrame.origin.y = self.searchViewInitialY - 105;
+            self.searchView.frame = searchViewFrame;
+            
+        } completion:^(BOOL finished) {
+            self.searchViewLastY = self.searchView.frame.origin.y;
+        }];
+    }
 }
 
 #pragma mark - UITableViewDelegate
