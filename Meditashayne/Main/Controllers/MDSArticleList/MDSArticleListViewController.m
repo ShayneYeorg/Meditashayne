@@ -72,7 +72,7 @@
 }
 
 - (void)configTableView {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, kScreen_Width, kScreen_Height-64)];
+    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, kScreen_Width, kScreen_Height - 64)];
     [self.view addSubview:self.tableView];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -91,7 +91,7 @@
 - (void)configSearchView {
     self.searchViewInitialY = self.view.frame.size.height - 40;
     self.searchViewLastY = self.searchViewInitialY;
-    self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 145)];
+    self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
     self.searchView.delegate = self;
     [self.view addSubview:self.searchView];
 }
@@ -148,8 +148,8 @@
 }
 
 - (void)searchViewDidEndDragging:(MDSSearchView *)searchView {
-    if (self.searchView.frame.origin.y > self.searchViewInitialY - 52) {
-        //searchView显示不足一半时，恢复隐藏状态
+    if (self.searchView.frame.origin.y > self.searchViewInitialY - 91) {
+        //searchView显示不足91个像素时，恢复隐藏状态（searchView高度为105）
         [UIView animateWithDuration:0.2 animations:^{
             CGRect searchViewFrame = self.searchView.frame;
             searchViewFrame.origin.y = self.searchViewInitialY;
@@ -160,7 +160,7 @@
         }];
         
     } else {
-        //searchView显示大于等于一半时，切换成显示状态
+        //searchView显示大于等于91个像素时，切换成显示状态
         [UIView animateWithDuration:0.3 animations:^{
             CGRect searchViewFrame = self.searchView.frame;
             searchViewFrame.origin.y = self.searchViewInitialY - 105;
