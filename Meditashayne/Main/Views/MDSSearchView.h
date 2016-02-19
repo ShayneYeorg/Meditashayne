@@ -8,11 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum _SearchViewState {
+    Search_View_State_Hidden = 0,
+    Search_View_State_Show,
+    Search_View_State_Input
+} SearchViewState;
+
 @class MDSSearchView;
 
 @protocol MDSSearchViewDelegate <NSObject>
 
-- (void)searchViewDidClicksSearchBtn:(MDSSearchView *)searchView;
+- (void)searchViewDidClickSearchBtn:(MDSSearchView *)searchView;
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance;
 - (void)searchViewDidEndDragging:(MDSSearchView *)searchView ;
 
@@ -21,7 +27,9 @@
 @interface MDSSearchView : UIView
 
 @property (nonatomic, strong) id <MDSSearchViewDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITextField *searchfield; //搜索框
 
 + (instancetype)loadFromNibWithFrame:(CGRect)frame;
+//+ (instancetype)loadFromNib;
 
 @end

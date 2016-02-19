@@ -43,7 +43,8 @@
                             <constraints>
                                 <constraint firstItem="uSx-GT-uHY" firstAttribute="centerY" secondItem="WNj-NB-leQ" secondAttribute="centerY" id="KFy-wX-9TS"/>
                                 <constraint firstAttribute="height" constant="35" id="Ybv-bZ-G5V"/>
-                                <constraint firstItem="uSx-GT-uHY" firstAttribute="centerX" secondItem="WNj-NB-leQ" secondAttribute="centerX" id="nyP-nk-dae"/>
+                                <constraint firstItem="uSx-GT-uHY" firstAttribute="leading" secondItem="WNj-NB-leQ" secondAttribute="leading" constant="8" id="q6G-1p-RRF"/>
+                                <constraint firstAttribute="trailing" secondItem="uSx-GT-uHY" secondAttribute="trailing" constant="8" id="xPj-Ej-O60"/>
                             </constraints>
                         </view>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="DDl-qE-gPB">
@@ -117,6 +118,7 @@
                 <outlet property="searchBtn" destination="p8w-XK-HVh" id="8QV-w8-rL0"/>
                 <outlet property="searchFieldBGView" destination="WNj-NB-leQ" id="KjO-5g-1Hs"/>
                 <outlet property="searchType" destination="DDl-qE-gPB" id="z2t-6a-yf3"/>
+                <outlet property="searchfield" destination="uSx-GT-uHY" id="jhu-YF-upl"/>
                 <outlet property="viewHandler" destination="ADT-tV-FqS" id="IWQ-WV-BY6"/>
             </connections>
             <point key="canvasLocation" x="-63" y="267.5"/>

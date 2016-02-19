@@ -10,7 +10,7 @@
 
 @interface MDSSearchView ()
 
-@property (weak, nonatomic) IBOutlet UIView *viewHandler;//拖拽点
+@property (weak, nonatomic) IBOutlet UIView *viewHandler; //拖拽点
 @property (weak, nonatomic) IBOutlet UIView *searchFieldBGView; //搜索框背景
 @property (weak, nonatomic) IBOutlet UIButton *searchBtn;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *searchType;
@@ -22,6 +22,7 @@
 #pragma mark - Public
 
 + (instancetype)loadFromNibWithFrame:(CGRect)frame {
+//+ (instancetype)loadFromNib {
     MDSSearchView *view = [[NSBundle mainBundle] loadNibNamed:@"MDSSearchView" owner:nil options:nil][0];
     [view setFrame:frame];
     [view configViewDetails];
@@ -72,13 +73,11 @@
             [self.delegate searchViewDidEndDragging:self];
         }
     }
-    
-    
 }
 
 - (IBAction)searchBtnClick:(id)sender {
-    if ([self.delegate respondsToSelector:@selector(searchViewDidClicksSearchBtn:)]) {
-        [self.delegate searchViewDidClicksSearchBtn:self];
+    if ([self.delegate respondsToSelector:@selector(searchViewDidClickSearchBtn:)]) {
+        [self.delegate searchViewDidClickSearchBtn:self];
     }
 }
 

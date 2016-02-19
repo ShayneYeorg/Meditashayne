@@ -14,7 +14,7 @@
 #import "MDSSearchView.h"
 #import "MDSPullUpToMore.h"
 
-@interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource, MDSSearchViewDelegate>
+@interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MDSSearchViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *articles;
@@ -92,7 +92,10 @@
     self.searchViewInitialY = self.view.frame.size.height - 40;
     self.searchViewLastY = self.searchViewInitialY;
     self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
+//    self.searchView = [MDSSearchView loadFromNib];
+//    [self.searchView setFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
     self.searchView.delegate = self;
+    self.searchView.searchfield.delegate = self;
     [self.view addSubview:self.searchView];
 }
 
@@ -106,11 +109,15 @@
 - (void)addNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTableView) name:ARTICLE_CREATE_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCell:) name:ARTICLE_ALTER_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)removeNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_CREATE_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_ALTER_NOTIFICATION object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)refreshTableView {
@@ -126,6 +133,42 @@
     [self.tableView reloadRowsAtIndexPaths:@[alteredCellIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *value = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
+    CGRect keyboardRect = [value CGRectValue];
+    [self moveSearchViewForState:Search_View_State_Input moveDistance:-(keyboardRect.size.height+105)];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    [self moveSearchViewForState:Search_View_State_Show moveDistance:0];
+}
+
+//Hidden和Show两种状态可以不指定moveDistance
+- (void)moveSearchViewForState:(SearchViewState)state moveDistance:(CGFloat)moveDistance {
+    switch (state) {
+        case Search_View_State_Hidden:
+            moveDistance = 0;
+            break;
+            
+        case Search_View_State_Show:
+            moveDistance = -105;
+            break;
+            
+        default:
+            break;
+    }
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect searchViewFrame = self.searchView.frame;
+        searchViewFrame.origin.y = self.searchViewInitialY + moveDistance;
+        self.searchView.frame = searchViewFrame;
+        
+    } completion:^(BOOL finished) {
+        self.searchViewLastY = self.searchView.frame.origin.y;
+    }];
+}
+
 #pragma mark - Getter
 
 - (NSMutableArray *)articles {
@@ -137,39 +180,47 @@
 
 #pragma mark - MDSSearchViewDelegate
 
-- (void)searchViewDidClicksSearchBtn:(MDSSearchView *)searchView {
+- (void)searchViewDidClickSearchBtn:(MDSSearchView *)searchView {
     
 }
 
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance {
+//    if ([self.searchView.searchfield isFirstResponder]) {
+//        [self.searchView.searchfield resignFirstResponder];
+//    }
+    
     CGRect searchViewFrame = self.searchView.frame;
     searchViewFrame.origin.y = self.searchViewLastY + dragDistance;
     self.searchView.frame = searchViewFrame;
+    MDSLog(@"%f", searchViewFrame.origin.y);
 }
 
 - (void)searchViewDidEndDragging:(MDSSearchView *)searchView {
     if (self.searchView.frame.origin.y > self.searchViewInitialY - 91) {
         //searchView显示不足91个像素时，恢复隐藏状态（searchView高度为105）
-        [UIView animateWithDuration:0.2 animations:^{
-            CGRect searchViewFrame = self.searchView.frame;
-            searchViewFrame.origin.y = self.searchViewInitialY;
-            self.searchView.frame = searchViewFrame;
-            
-        } completion:^(BOOL finished) {
-            self.searchViewLastY = self.searchView.frame.origin.y;
-        }];
+        [self moveSearchViewForState:Search_View_State_Hidden moveDistance:0];
         
     } else {
         //searchView显示大于等于91个像素时，切换成显示状态
-        [UIView animateWithDuration:0.3 animations:^{
-            CGRect searchViewFrame = self.searchView.frame;
-            searchViewFrame.origin.y = self.searchViewInitialY - 105;
-            self.searchView.frame = searchViewFrame;
-            
-        } completion:^(BOOL finished) {
-            self.searchViewLastY = self.searchView.frame.origin.y;
-        }];
+        [self moveSearchViewForState:Search_View_State_Show moveDistance:0];
     }
+}
+
+#pragma mark - UITextFieldDelegate
+
+//- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    
+//}
+//
+//- (void)textFieldDidEndEditing:(UITextField *)textField {
+//    
+//}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if ([self.searchView.searchfield isFirstResponder]) {
+        [self.searchView.searchfield resignFirstResponder];
+    }
+    return YES;
 }
 
 #pragma mark - UITableViewDelegate
