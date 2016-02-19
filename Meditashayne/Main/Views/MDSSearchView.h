@@ -18,6 +18,6 @@
 
 @interface MDSSearchView : UIView
 
-+ (instancetype)loadFromNib;
++ (instancetype)loadFromNibWithFrame:(CGRect)frame;
 
 @end

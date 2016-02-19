@@ -6,11 +6,12 @@
 //  Copyright © 2016年 shayneyeorg. All rights reserved.
 //
 
-#define kPageLimit 10
+#define kPageLimit 20
 
 #import "MDSArticleListViewController.h"
 #import "MDSArticleDetailViewController.h"
 #import "MDSAritcleCell.h"
+#import "MDSSearchView.h"
 #import "MDSPullUpToMore.h"
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -33,6 +34,11 @@
     [self fetchArticles];
     
     [self addNotifications];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    //xib的尺寸和实际屏幕尺寸可能会有区别，在这里才设置可避免控件尺寸受xib影响
+    [self configSearchView];
 }
 
 - (void)dealloc {
@@ -79,13 +85,9 @@
     }];
 }
 
-#pragma mark - Getter
-
-- (NSMutableArray *)articles {
-    if (_articles == nil) {
-        _articles = [NSMutableArray array];
-    }
-    return _articles;
+- (void)configSearchView {
+    MDSSearchView *searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, 100, kScreen_Width, 145)];
+    [self.view addSubview:searchView];
 }
 
 #pragma mark - Private
@@ -116,6 +118,15 @@
     NSIndexPath *alteredCellIndexPath = userInfo[@"indexPath"];
     self.articles[alteredCellIndexPath.row] = alteredArticle;
     [self.tableView reloadRowsAtIndexPaths:@[alteredCellIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+#pragma mark - Getter
+
+- (NSMutableArray *)articles {
+    if (_articles == nil) {
+        _articles = [NSMutableArray array];
+    }
+    return _articles;
 }
 
 #pragma mark - UITableViewDelegate
