@@ -7,35 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3413B6A11C61985A000B2AB7 /* MDSArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6991C61985A000B2AB7 /* MDSArticleDetailViewController.m */; };
-		3413B6A21C61985A000B2AB7 /* MDSArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B69A1C61985A000B2AB7 /* MDSArticleDetailViewController.xib */; };
-		3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B69D1C61985A000B2AB7 /* MDSArticleListViewController.m */; };
-		3413B6A41C61985A000B2AB7 /* MDSArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */; };
-		3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */; };
-		3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6A81C619BC7000B2AB7 /* Article.m */; };
-		3413B6B01C61A558000B2AB7 /* MDSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6AF1C61A558000B2AB7 /* MDSTool.m */; };
-		3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */; };
-		3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */; };
-		3413B7441C62F738000B2AB7 /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */; };
-		3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */; };
-		342A55B91C6F2801000F1947 /* MDSCoreDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */; };
-		342A55BD1C70573D000F1947 /* MDSAritcleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A55BB1C70573D000F1947 /* MDSAritcleCell.m */; };
-		342A55BE1C70573D000F1947 /* MDSAritcleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 342A55BC1C70573D000F1947 /* MDSAritcleCell.xib */; };
-		349DB4B21C79C21E005AD278 /* MDSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4B11C79C21E005AD278 /* MDSResponse.m */; };
-		34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA631C6AEE25002B891A /* MDSNavigationController.m */; };
-		34A0BA681C6C7D45002B891A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA671C6C7D45002B891A /* SVProgressHUD.m */; };
-		34A0BA6B1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA6A1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m */; };
-		34A0BA6E1C6C7D8F002B891A /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA6D1C6C7D8F002B891A /* SVRadialGradientLayer.m */; };
-		34A0BA701C6C7E6A002B891A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34A0BA6F1C6C7E6A002B891A /* SVProgressHUD.bundle */; };
-		34F1FDF01C5EF35F00633BD9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDEF1C5EF35F00633BD9 /* main.m */; };
-		34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */; };
+		349DB4E91C79CC7A005AD278 /* MDSArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4B71C79CC7A005AD278 /* MDSArticleDetailViewController.m */; };
+		349DB4EA1C79CC7A005AD278 /* MDSArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4B81C79CC7A005AD278 /* MDSArticleDetailViewController.xib */; };
+		349DB4EB1C79CC7A005AD278 /* MDSArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4BC1C79CC7A005AD278 /* MDSArticleListViewController.m */; };
+		349DB4EC1C79CC7A005AD278 /* MDSArticleListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4BD1C79CC7A005AD278 /* MDSArticleListViewController.xib */; };
+		349DB4ED1C79CC7A005AD278 /* MDSAritcleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4C01C79CC7A005AD278 /* MDSAritcleCell.m */; };
+		349DB4EE1C79CC7A005AD278 /* MDSAritcleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4C11C79CC7A005AD278 /* MDSAritcleCell.xib */; };
+		349DB4EF1C79CC7A005AD278 /* MDSSearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4C31C79CC7A005AD278 /* MDSSearchView.m */; };
+		349DB4F01C79CC7A005AD278 /* MDSSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4C41C79CC7A005AD278 /* MDSSearchView.xib */; };
+		349DB4F11C79CC7A005AD278 /* MDSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4C81C79CC7A005AD278 /* MDSNavigationController.m */; };
+		349DB4F21C79CC7A005AD278 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4CC1C79CC7A005AD278 /* SVIndefiniteAnimatedView.m */; };
+		349DB4F31C79CC7A005AD278 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4CD1C79CC7A005AD278 /* SVProgressHUD.bundle */; };
+		349DB4F41C79CC7A005AD278 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4CF1C79CC7A005AD278 /* SVProgressHUD.m */; };
+		349DB4F51C79CC7A005AD278 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4D11C79CC7A005AD278 /* SVRadialGradientLayer.m */; };
+		349DB4F61C79CC7A005AD278 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4D41C79CC7A005AD278 /* AppDelegate.m */; };
+		349DB4F71C79CC7A005AD278 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4D51C79CC7A005AD278 /* main.m */; };
+		349DB4F81C79CC7A005AD278 /* Article+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4D91C79CC7A005AD278 /* Article+CoreDataProperties.m */; };
+		349DB4F91C79CC7A005AD278 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4DB1C79CC7A005AD278 /* Article.m */; };
+		349DB4FA1C79CC7A005AD278 /* Meditashayne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4DC1C79CC7A005AD278 /* Meditashayne.xcdatamodeld */; };
+		349DB4FB1C79CC7A005AD278 /* MDSCoreDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */; };
+		349DB4FC1C79CC7A005AD278 /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */; };
+		349DB4FD1C79CC7A005AD278 /* MDSPullUpToMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */; };
+		349DB4FE1C79CC7A005AD278 /* MDSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E61C79CC7A005AD278 /* MDSResponse.m */; };
+		349DB4FF1C79CC7A005AD278 /* MDSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E81C79CC7A005AD278 /* MDSTool.m */; };
 		34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDF71C5EF36000633BD9 /* Main.storyboard */; };
-		34F1FDFC1C5EF36000633BD9 /* Meditashayne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */; };
 		34F1FDFE1C5EF36000633BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */; };
 		34F1FE011C5EF36000633BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */; };
 		34F1FE0C1C5EF36000633BD9 /* MeditashayneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */; };
 		34F1FE171C5EF36000633BD9 /* MeditashayneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */; };
-		34F1FE271C5F045700633BD9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F1FE261C5F045700633BD9 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,49 +55,49 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3413B6981C61985A000B2AB7 /* MDSArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleDetailViewController.h; sourceTree = "<group>"; };
-		3413B6991C61985A000B2AB7 /* MDSArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleDetailViewController.m; sourceTree = "<group>"; };
-		3413B69A1C61985A000B2AB7 /* MDSArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleDetailViewController.xib; sourceTree = "<group>"; };
-		3413B69C1C61985A000B2AB7 /* MDSArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleListViewController.h; sourceTree = "<group>"; };
-		3413B69D1C61985A000B2AB7 /* MDSArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleListViewController.m; sourceTree = "<group>"; };
-		3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleListViewController.xib; sourceTree = "<group>"; };
-		3413B6A51C619BC7000B2AB7 /* Article+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Article+CoreDataProperties.h"; sourceTree = "<group>"; };
-		3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Article+CoreDataProperties.m"; sourceTree = "<group>"; };
-		3413B6A71C619BC7000B2AB7 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		3413B6A81C619BC7000B2AB7 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
 		3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
-		3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSConstant.h; sourceTree = "<group>"; };
-		3413B6AE1C61A558000B2AB7 /* MDSTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSTool.h; sourceTree = "<group>"; };
-		3413B6AF1C61A558000B2AB7 /* MDSTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSTool.m; sourceTree = "<group>"; };
-		3413B6B11C61AB34000B2AB7 /* MDSSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSSearchView.h; sourceTree = "<group>"; };
-		3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSSearchView.m; sourceTree = "<group>"; };
-		3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSSearchView.xib; sourceTree = "<group>"; };
-		3413B7401C62F737000B2AB7 /* MDSPullAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullAnimationView.h; sourceTree = "<group>"; };
-		3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
-		3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullUpToMore.h; sourceTree = "<group>"; };
-		3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullUpToMore.m; sourceTree = "<group>"; };
-		342A55B71C6F2801000F1947 /* MDSCoreDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSCoreDataAccess.h; sourceTree = "<group>"; };
-		342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSCoreDataAccess.m; sourceTree = "<group>"; };
-		342A55BA1C70573D000F1947 /* MDSAritcleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSAritcleCell.h; sourceTree = "<group>"; };
-		342A55BB1C70573D000F1947 /* MDSAritcleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSAritcleCell.m; sourceTree = "<group>"; };
-		342A55BC1C70573D000F1947 /* MDSAritcleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSAritcleCell.xib; sourceTree = "<group>"; };
-		349DB4B01C79C21E005AD278 /* MDSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSResponse.h; sourceTree = "<group>"; };
-		349DB4B11C79C21E005AD278 /* MDSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSResponse.m; sourceTree = "<group>"; };
-		34A0BA621C6AEE25002B891A /* MDSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSNavigationController.h; sourceTree = "<group>"; };
-		34A0BA631C6AEE25002B891A /* MDSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSNavigationController.m; sourceTree = "<group>"; };
-		34A0BA661C6C7D45002B891A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		34A0BA671C6C7D45002B891A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		34A0BA691C6C7D6D002B891A /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		34A0BA6A1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		34A0BA6C1C6C7D8F002B891A /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		34A0BA6D1C6C7D8F002B891A /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
-		34A0BA6F1C6C7E6A002B891A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		349DB4B61C79CC7A005AD278 /* MDSArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleDetailViewController.h; sourceTree = "<group>"; };
+		349DB4B71C79CC7A005AD278 /* MDSArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleDetailViewController.m; sourceTree = "<group>"; };
+		349DB4B81C79CC7A005AD278 /* MDSArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleDetailViewController.xib; sourceTree = "<group>"; };
+		349DB4BB1C79CC7A005AD278 /* MDSArticleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleListViewController.h; sourceTree = "<group>"; };
+		349DB4BC1C79CC7A005AD278 /* MDSArticleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleListViewController.m; sourceTree = "<group>"; };
+		349DB4BD1C79CC7A005AD278 /* MDSArticleListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleListViewController.xib; sourceTree = "<group>"; };
+		349DB4BF1C79CC7A005AD278 /* MDSAritcleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSAritcleCell.h; sourceTree = "<group>"; };
+		349DB4C01C79CC7A005AD278 /* MDSAritcleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSAritcleCell.m; sourceTree = "<group>"; };
+		349DB4C11C79CC7A005AD278 /* MDSAritcleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSAritcleCell.xib; sourceTree = "<group>"; };
+		349DB4C21C79CC7A005AD278 /* MDSSearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSSearchView.h; sourceTree = "<group>"; };
+		349DB4C31C79CC7A005AD278 /* MDSSearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSSearchView.m; sourceTree = "<group>"; };
+		349DB4C41C79CC7A005AD278 /* MDSSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSSearchView.xib; sourceTree = "<group>"; };
+		349DB4C71C79CC7A005AD278 /* MDSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSNavigationController.h; sourceTree = "<group>"; };
+		349DB4C81C79CC7A005AD278 /* MDSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSNavigationController.m; sourceTree = "<group>"; };
+		349DB4CB1C79CC7A005AD278 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		349DB4CC1C79CC7A005AD278 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		349DB4CD1C79CC7A005AD278 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		349DB4CE1C79CC7A005AD278 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		349DB4CF1C79CC7A005AD278 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		349DB4D01C79CC7A005AD278 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		349DB4D11C79CC7A005AD278 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		349DB4D31C79CC7A005AD278 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		349DB4D41C79CC7A005AD278 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		349DB4D51C79CC7A005AD278 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		349DB4D61C79CC7A005AD278 /* MDSConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSConstant.h; sourceTree = "<group>"; };
+		349DB4D81C79CC7A005AD278 /* Article+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Article+CoreDataProperties.h"; sourceTree = "<group>"; };
+		349DB4D91C79CC7A005AD278 /* Article+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Article+CoreDataProperties.m"; sourceTree = "<group>"; };
+		349DB4DA1C79CC7A005AD278 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		349DB4DB1C79CC7A005AD278 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		349DB4DD1C79CC7A005AD278 /* Meditashayne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meditashayne.xcdatamodel; sourceTree = "<group>"; };
+		349DB4DF1C79CC7A005AD278 /* MDSCoreDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSCoreDataAccess.h; sourceTree = "<group>"; };
+		349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSCoreDataAccess.m; sourceTree = "<group>"; };
+		349DB4E11C79CC7A005AD278 /* MDSPullAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullAnimationView.h; sourceTree = "<group>"; };
+		349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
+		349DB4E31C79CC7A005AD278 /* MDSPullUpToMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullUpToMore.h; sourceTree = "<group>"; };
+		349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullUpToMore.m; sourceTree = "<group>"; };
+		349DB4E51C79CC7A005AD278 /* MDSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSResponse.h; sourceTree = "<group>"; };
+		349DB4E61C79CC7A005AD278 /* MDSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSResponse.m; sourceTree = "<group>"; };
+		349DB4E71C79CC7A005AD278 /* MDSTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSTool.h; sourceTree = "<group>"; };
+		349DB4E81C79CC7A005AD278 /* MDSTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSTool.m; sourceTree = "<group>"; };
 		34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Meditashayne.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		34F1FDEF1C5EF35F00633BD9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../../main.m; sourceTree = "<group>"; };
-		34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
-		34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
 		34F1FDF81C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		34F1FDFB1C5EF36000633BD9 /* Meditashayne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meditashayne.xcdatamodel; sourceTree = "<group>"; };
 		34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F1FE001C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F1FE021C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -108,7 +107,6 @@
 		34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneUITests.m; sourceTree = "<group>"; };
 		34F1FE181C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE261C5F045700633BD9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +114,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34F1FE271C5F045700633BD9 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,98 +134,147 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3413B6961C61985A000B2AB7 /* Controllers */ = {
+		349DB4B31C79CC7A005AD278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3413B69B1C61985A000B2AB7 /* MDSArticleList */,
-				3413B6971C61985A000B2AB7 /* MDSArticleDetail */,
-				34A0BA611C6AEDFE002B891A /* Other */,
+				349DB4C51C79CC7A005AD278 /* Public(公共) */,
+				349DB4B91C79CC7A005AD278 /* List(随笔列表) */,
+				349DB4B41C79CC7A005AD278 /* Detail(随笔详情) */,
 			);
-			path = Controllers;
+			path = Classes;
 			sourceTree = "<group>";
 		};
-		3413B6971C61985A000B2AB7 /* MDSArticleDetail */ = {
+		349DB4B41C79CC7A005AD278 /* Detail(随笔详情) */ = {
 			isa = PBXGroup;
 			children = (
-				3413B6981C61985A000B2AB7 /* MDSArticleDetailViewController.h */,
-				3413B6991C61985A000B2AB7 /* MDSArticleDetailViewController.m */,
-				3413B69A1C61985A000B2AB7 /* MDSArticleDetailViewController.xib */,
+				349DB4B51C79CC7A005AD278 /* Controller */,
 			);
-			path = MDSArticleDetail;
+			path = "Detail(随笔详情)";
 			sourceTree = "<group>";
 		};
-		3413B69B1C61985A000B2AB7 /* MDSArticleList */ = {
+		349DB4B51C79CC7A005AD278 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3413B69C1C61985A000B2AB7 /* MDSArticleListViewController.h */,
-				3413B69D1C61985A000B2AB7 /* MDSArticleListViewController.m */,
-				3413B69E1C61985A000B2AB7 /* MDSArticleListViewController.xib */,
+				349DB4B61C79CC7A005AD278 /* MDSArticleDetailViewController.h */,
+				349DB4B71C79CC7A005AD278 /* MDSArticleDetailViewController.m */,
+				349DB4B81C79CC7A005AD278 /* MDSArticleDetailViewController.xib */,
 			);
-			path = MDSArticleList;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		3413B69F1C61985A000B2AB7 /* Models */ = {
+		349DB4B91C79CC7A005AD278 /* List(随笔列表) */ = {
 			isa = PBXGroup;
 			children = (
-				3413B6A51C619BC7000B2AB7 /* Article+CoreDataProperties.h */,
-				3413B6A61C619BC7000B2AB7 /* Article+CoreDataProperties.m */,
-				3413B6A71C619BC7000B2AB7 /* Article.h */,
-				3413B6A81C619BC7000B2AB7 /* Article.m */,
+				349DB4BA1C79CC7A005AD278 /* Controller */,
+				349DB4BE1C79CC7A005AD278 /* View */,
 			);
-			path = Models;
+			path = "List(随笔列表)";
 			sourceTree = "<group>";
 		};
-		3413B6A01C61985A000B2AB7 /* Views */ = {
+		349DB4BA1C79CC7A005AD278 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3413B6B11C61AB34000B2AB7 /* MDSSearchView.h */,
-				3413B6B21C61AB34000B2AB7 /* MDSSearchView.m */,
-				3413B6B41C61AB47000B2AB7 /* MDSSearchView.xib */,
-				342A55BA1C70573D000F1947 /* MDSAritcleCell.h */,
-				342A55BB1C70573D000F1947 /* MDSAritcleCell.m */,
-				342A55BC1C70573D000F1947 /* MDSAritcleCell.xib */,
+				349DB4BB1C79CC7A005AD278 /* MDSArticleListViewController.h */,
+				349DB4BC1C79CC7A005AD278 /* MDSArticleListViewController.m */,
+				349DB4BD1C79CC7A005AD278 /* MDSArticleListViewController.xib */,
 			);
-			path = Views;
+			path = Controller;
 			sourceTree = "<group>";
 		};
-		3413B6AD1C61A518000B2AB7 /* Tools */ = {
+		349DB4BE1C79CC7A005AD278 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3413B6AE1C61A558000B2AB7 /* MDSTool.h */,
-				3413B6AF1C61A558000B2AB7 /* MDSTool.m */,
-				342A55B71C6F2801000F1947 /* MDSCoreDataAccess.h */,
-				342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */,
-				349DB4B01C79C21E005AD278 /* MDSResponse.h */,
-				349DB4B11C79C21E005AD278 /* MDSResponse.m */,
-				3413B7401C62F737000B2AB7 /* MDSPullAnimationView.h */,
-				3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */,
-				3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */,
-				3413B7431C62F737000B2AB7 /* MDSPullUpToMore.m */,
+				349DB4BF1C79CC7A005AD278 /* MDSAritcleCell.h */,
+				349DB4C01C79CC7A005AD278 /* MDSAritcleCell.m */,
+				349DB4C11C79CC7A005AD278 /* MDSAritcleCell.xib */,
+				349DB4C21C79CC7A005AD278 /* MDSSearchView.h */,
+				349DB4C31C79CC7A005AD278 /* MDSSearchView.m */,
+				349DB4C41C79CC7A005AD278 /* MDSSearchView.xib */,
 			);
-			path = Tools;
+			path = View;
 			sourceTree = "<group>";
 		};
-		34A0BA611C6AEDFE002B891A /* Other */ = {
+		349DB4C51C79CC7A005AD278 /* Public(公共) */ = {
 			isa = PBXGroup;
 			children = (
-				34A0BA621C6AEE25002B891A /* MDSNavigationController.h */,
-				34A0BA631C6AEE25002B891A /* MDSNavigationController.m */,
+				349DB4D21C79CC7A005AD278 /* Main */,
+				349DB4C61C79CC7A005AD278 /* Controller */,
+				349DB4D71C79CC7A005AD278 /* Model */,
+				349DB4DE1C79CC7A005AD278 /* Tool */,
+				349DB4C91C79CC7A005AD278 /* Lib */,
 			);
-			path = Other;
+			path = "Public(公共)";
 			sourceTree = "<group>";
 		};
-		34A0BA651C6C7D2E002B891A /* SVProgressHUD */ = {
+		349DB4C61C79CC7A005AD278 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				34A0BA6F1C6C7E6A002B891A /* SVProgressHUD.bundle */,
-				34A0BA661C6C7D45002B891A /* SVProgressHUD.h */,
-				34A0BA671C6C7D45002B891A /* SVProgressHUD.m */,
-				34A0BA691C6C7D6D002B891A /* SVIndefiniteAnimatedView.h */,
-				34A0BA6A1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m */,
-				34A0BA6C1C6C7D8F002B891A /* SVRadialGradientLayer.h */,
-				34A0BA6D1C6C7D8F002B891A /* SVRadialGradientLayer.m */,
+				349DB4C71C79CC7A005AD278 /* MDSNavigationController.h */,
+				349DB4C81C79CC7A005AD278 /* MDSNavigationController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		349DB4C91C79CC7A005AD278 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				349DB4CA1C79CC7A005AD278 /* SVProgressHUD */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		349DB4CA1C79CC7A005AD278 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				349DB4CB1C79CC7A005AD278 /* SVIndefiniteAnimatedView.h */,
+				349DB4CC1C79CC7A005AD278 /* SVIndefiniteAnimatedView.m */,
+				349DB4CD1C79CC7A005AD278 /* SVProgressHUD.bundle */,
+				349DB4CE1C79CC7A005AD278 /* SVProgressHUD.h */,
+				349DB4CF1C79CC7A005AD278 /* SVProgressHUD.m */,
+				349DB4D01C79CC7A005AD278 /* SVRadialGradientLayer.h */,
+				349DB4D11C79CC7A005AD278 /* SVRadialGradientLayer.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		349DB4D21C79CC7A005AD278 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				349DB4D31C79CC7A005AD278 /* AppDelegate.h */,
+				349DB4D41C79CC7A005AD278 /* AppDelegate.m */,
+				349DB4D51C79CC7A005AD278 /* main.m */,
+				349DB4D61C79CC7A005AD278 /* MDSConstant.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		349DB4D71C79CC7A005AD278 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				349DB4D81C79CC7A005AD278 /* Article+CoreDataProperties.h */,
+				349DB4D91C79CC7A005AD278 /* Article+CoreDataProperties.m */,
+				349DB4DA1C79CC7A005AD278 /* Article.h */,
+				349DB4DB1C79CC7A005AD278 /* Article.m */,
+				349DB4DC1C79CC7A005AD278 /* Meditashayne.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		349DB4DE1C79CC7A005AD278 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				349DB4DF1C79CC7A005AD278 /* MDSCoreDataAccess.h */,
+				349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */,
+				349DB4E11C79CC7A005AD278 /* MDSPullAnimationView.h */,
+				349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */,
+				349DB4E31C79CC7A005AD278 /* MDSPullUpToMore.h */,
+				349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */,
+				349DB4E51C79CC7A005AD278 /* MDSResponse.h */,
+				349DB4E61C79CC7A005AD278 /* MDSResponse.m */,
+				349DB4E71C79CC7A005AD278 /* MDSTool.h */,
+				349DB4E81C79CC7A005AD278 /* MDSTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		34F1FDE21C5EF35F00633BD9 = {
@@ -254,7 +300,7 @@
 		34F1FDED1C5EF35F00633BD9 /* Meditashayne */ = {
 			isa = PBXGroup;
 			children = (
-				34F1FE241C5EFA8200633BD9 /* Main */,
+				349DB4B31C79CC7A005AD278 /* Classes */,
 				34F1FDEE1C5EF35F00633BD9 /* Supporting Files */,
 			);
 			path = Meditashayne;
@@ -267,7 +313,6 @@
 				34F1FDF71C5EF36000633BD9 /* Main.storyboard */,
 				34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */,
 				34F1FE021C5EF36000633BD9 /* Info.plist */,
-				34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */,
 				3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
@@ -289,39 +334,6 @@
 				34F1FE181C5EF36000633BD9 /* Info.plist */,
 			);
 			path = MeditashayneUITests;
-			sourceTree = "<group>";
-		};
-		34F1FE241C5EFA8200633BD9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				3413B6961C61985A000B2AB7 /* Controllers */,
-				3413B6A01C61985A000B2AB7 /* Views */,
-				3413B69F1C61985A000B2AB7 /* Models */,
-				3413B6AD1C61A518000B2AB7 /* Tools */,
-				34F1FE281C5F048900633BD9 /* Libs */,
-				34F1FE251C5EFA8200633BD9 /* Main */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		34F1FE251C5EFA8200633BD9 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				34F1FDEF1C5EF35F00633BD9 /* main.m */,
-				34F1FDF11C5EF35F00633BD9 /* AppDelegate.h */,
-				34F1FDF21C5EF35F00633BD9 /* AppDelegate.m */,
-				3413B6AC1C61A1D3000B2AB7 /* MDSConstant.h */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		34F1FE281C5F048900633BD9 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				34A0BA651C6C7D2E002B891A /* SVProgressHUD */,
-				34F1FE261C5F045700633BD9 /* CoreData.framework */,
-			);
-			path = Libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,14 +439,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A0BA701C6C7E6A002B891A /* SVProgressHUD.bundle in Resources */,
+				349DB4F01C79CC7A005AD278 /* MDSSearchView.xib in Resources */,
 				34F1FE011C5EF36000633BD9 /* LaunchScreen.storyboard in Resources */,
-				3413B6A21C61985A000B2AB7 /* MDSArticleDetailViewController.xib in Resources */,
-				342A55BE1C70573D000F1947 /* MDSAritcleCell.xib in Resources */,
+				349DB4EA1C79CC7A005AD278 /* MDSArticleDetailViewController.xib in Resources */,
+				349DB4F31C79CC7A005AD278 /* SVProgressHUD.bundle in Resources */,
 				34F1FDFE1C5EF36000633BD9 /* Assets.xcassets in Resources */,
-				3413B6A41C61985A000B2AB7 /* MDSArticleListViewController.xib in Resources */,
+				349DB4EE1C79CC7A005AD278 /* MDSAritcleCell.xib in Resources */,
+				349DB4EC1C79CC7A005AD278 /* MDSArticleListViewController.xib in Resources */,
 				34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */,
-				3413B6B51C61AB47000B2AB7 /* MDSSearchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,24 +471,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */,
-				349DB4B21C79C21E005AD278 /* MDSResponse.m in Sources */,
-				3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */,
-				3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */,
-				3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */,
-				34A0BA6E1C6C7D8F002B891A /* SVRadialGradientLayer.m in Sources */,
-				3413B6A31C61985A000B2AB7 /* MDSArticleListViewController.m in Sources */,
-				34A0BA6B1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m in Sources */,
-				342A55B91C6F2801000F1947 /* MDSCoreDataAccess.m in Sources */,
-				3413B6AA1C619BC7000B2AB7 /* Article.m in Sources */,
-				34F1FDFC1C5EF36000633BD9 /* Meditashayne.xcdatamodeld in Sources */,
-				34F1FDF31C5EF35F00633BD9 /* AppDelegate.m in Sources */,
-				3413B6A11C61985A000B2AB7 /* MDSArticleDetailViewController.m in Sources */,
-				342A55BD1C70573D000F1947 /* MDSAritcleCell.m in Sources */,
-				34A0BA681C6C7D45002B891A /* SVProgressHUD.m in Sources */,
-				3413B7441C62F738000B2AB7 /* MDSPullAnimationView.m in Sources */,
-				3413B6B01C61A558000B2AB7 /* MDSTool.m in Sources */,
-				34F1FDF01C5EF35F00633BD9 /* main.m in Sources */,
+				349DB4F71C79CC7A005AD278 /* main.m in Sources */,
+				349DB4ED1C79CC7A005AD278 /* MDSAritcleCell.m in Sources */,
+				349DB4EB1C79CC7A005AD278 /* MDSArticleListViewController.m in Sources */,
+				349DB4F61C79CC7A005AD278 /* AppDelegate.m in Sources */,
+				349DB4E91C79CC7A005AD278 /* MDSArticleDetailViewController.m in Sources */,
+				349DB4F81C79CC7A005AD278 /* Article+CoreDataProperties.m in Sources */,
+				349DB4F51C79CC7A005AD278 /* SVRadialGradientLayer.m in Sources */,
+				349DB4FC1C79CC7A005AD278 /* MDSPullAnimationView.m in Sources */,
+				349DB4FD1C79CC7A005AD278 /* MDSPullUpToMore.m in Sources */,
+				349DB4F41C79CC7A005AD278 /* SVProgressHUD.m in Sources */,
+				349DB4F91C79CC7A005AD278 /* Article.m in Sources */,
+				349DB4FE1C79CC7A005AD278 /* MDSResponse.m in Sources */,
+				349DB4EF1C79CC7A005AD278 /* MDSSearchView.m in Sources */,
+				349DB4F11C79CC7A005AD278 /* MDSNavigationController.m in Sources */,
+				349DB4FF1C79CC7A005AD278 /* MDSTool.m in Sources */,
+				349DB4FB1C79CC7A005AD278 /* MDSCoreDataAccess.m in Sources */,
+				349DB4F21C79CC7A005AD278 /* SVIndefiniteAnimatedView.m in Sources */,
+				349DB4FA1C79CC7A005AD278 /* Meditashayne.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,12 +739,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		34F1FDFA1C5EF36000633BD9 /* Meditashayne.xcdatamodeld */ = {
+		349DB4DC1C79CC7A005AD278 /* Meditashayne.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				34F1FDFB1C5EF36000633BD9 /* Meditashayne.xcdatamodel */,
+				349DB4DD1C79CC7A005AD278 /* Meditashayne.xcdatamodel */,
 			);
-			currentVersion = 34F1FDFB1C5EF36000633BD9 /* Meditashayne.xcdatamodel */;
+			currentVersion = 349DB4DD1C79CC7A005AD278 /* Meditashayne.xcdatamodel */;
 			path = Meditashayne.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
