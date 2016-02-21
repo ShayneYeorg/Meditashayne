@@ -38,6 +38,7 @@
     [layer setCornerRadius:4];
     [layer setBorderWidth:0.5];
     [layer setBorderColor:[RGB(50, 50, 50) CGColor]];
+    
 }
 
 //跳过当前view由subview接收事件

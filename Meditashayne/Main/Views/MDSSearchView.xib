@@ -32,7 +32,6 @@
                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uSx-GT-uHY">
                                     <rect key="frame" x="8" y="3" width="264" height="30"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="264" id="7Tc-9a-Vzk"/>
                                         <constraint firstAttribute="height" constant="30" id="e5U-r6-JAc"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -121,7 +120,7 @@
                 <outlet property="searchfield" destination="uSx-GT-uHY" id="jhu-YF-upl"/>
                 <outlet property="viewHandler" destination="ADT-tV-FqS" id="IWQ-WV-BY6"/>
             </connections>
-            <point key="canvasLocation" x="-63" y="267.5"/>
+            <point key="canvasLocation" x="-96" y="259.5"/>
         </view>
         <panGestureRecognizer minimumNumberOfTouches="1" id="anj-mK-SDR">
             <connections>

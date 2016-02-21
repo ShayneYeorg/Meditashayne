@@ -34,18 +34,20 @@
     [self configViewDetails];
     [self configCreateBarBtn];
     [self configTableView];
+    [self configSearchView];
     [self fetchArticles];
-    
-    [self addNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    //xib的尺寸和实际屏幕尺寸可能会有区别，在这里才加载可避免控件尺寸受xib影响
-    [self configSearchView];
+    //在6和6s下尺寸会出现偏差（为什么？）
+    if (self.searchView.frame.size.width != kScreen_Width) {
+        CGRect searchFrame = self.searchView.frame;
+        searchFrame.size.width = kScreen_Width;
+        self.searchView.frame = searchFrame;
+    }
 }
 
 - (void)dealloc {
-    [self removeNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -89,11 +91,9 @@
 }
 
 - (void)configSearchView {
-    self.searchViewInitialY = self.view.frame.size.height - 40;
+    self.searchViewInitialY = kScreen_Height - 40;
     self.searchViewLastY = self.searchViewInitialY;
     self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
-//    self.searchView = [MDSSearchView loadFromNib];
-//    [self.searchView setFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
     self.searchView.delegate = self;
     self.searchView.searchfield.delegate = self;
     [self.view addSubview:self.searchView];
@@ -149,10 +149,12 @@
     switch (state) {
         case Search_View_State_Hidden:
             moveDistance = 0;
+            [self removeNotifications];
             break;
             
         case Search_View_State_Show:
             moveDistance = -105;
+            [self addNotifications];
             break;
             
         default:
@@ -185,14 +187,14 @@
 }
 
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance {
-//    if ([self.searchView.searchfield isFirstResponder]) {
-//        [self.searchView.searchfield resignFirstResponder];
-//    }
+    if ([self.searchView.searchfield isFirstResponder]) {
+        [self.searchView.searchfield resignFirstResponder];
+    }
     
     CGRect searchViewFrame = self.searchView.frame;
     searchViewFrame.origin.y = self.searchViewLastY + dragDistance;
     self.searchView.frame = searchViewFrame;
-    MDSLog(@"%f", searchViewFrame.origin.y);
+//    MDSLog(@"%f", searchViewFrame.origin.y);
 }
 
 - (void)searchViewDidEndDragging:(MDSSearchView *)searchView {
