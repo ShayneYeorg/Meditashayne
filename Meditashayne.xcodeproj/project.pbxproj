@@ -21,6 +21,7 @@
 		342A55B91C6F2801000F1947 /* MDSCoreDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */; };
 		342A55BD1C70573D000F1947 /* MDSAritcleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 342A55BB1C70573D000F1947 /* MDSAritcleCell.m */; };
 		342A55BE1C70573D000F1947 /* MDSAritcleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 342A55BC1C70573D000F1947 /* MDSAritcleCell.xib */; };
+		349DB4B21C79C21E005AD278 /* MDSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4B11C79C21E005AD278 /* MDSResponse.m */; };
 		34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA631C6AEE25002B891A /* MDSNavigationController.m */; };
 		34A0BA681C6C7D45002B891A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA671C6C7D45002B891A /* SVProgressHUD.m */; };
 		34A0BA6B1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A0BA6A1C6C7D6D002B891A /* SVIndefiniteAnimatedView.m */; };
@@ -81,6 +82,8 @@
 		342A55BA1C70573D000F1947 /* MDSAritcleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSAritcleCell.h; sourceTree = "<group>"; };
 		342A55BB1C70573D000F1947 /* MDSAritcleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSAritcleCell.m; sourceTree = "<group>"; };
 		342A55BC1C70573D000F1947 /* MDSAritcleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSAritcleCell.xib; sourceTree = "<group>"; };
+		349DB4B01C79C21E005AD278 /* MDSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSResponse.h; sourceTree = "<group>"; };
+		349DB4B11C79C21E005AD278 /* MDSResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSResponse.m; sourceTree = "<group>"; };
 		34A0BA621C6AEE25002B891A /* MDSNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSNavigationController.h; sourceTree = "<group>"; };
 		34A0BA631C6AEE25002B891A /* MDSNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSNavigationController.m; sourceTree = "<group>"; };
 		34A0BA661C6C7D45002B891A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
@@ -195,6 +198,8 @@
 				3413B6AF1C61A558000B2AB7 /* MDSTool.m */,
 				342A55B71C6F2801000F1947 /* MDSCoreDataAccess.h */,
 				342A55B81C6F2801000F1947 /* MDSCoreDataAccess.m */,
+				349DB4B01C79C21E005AD278 /* MDSResponse.h */,
+				349DB4B11C79C21E005AD278 /* MDSResponse.m */,
 				3413B7401C62F737000B2AB7 /* MDSPullAnimationView.h */,
 				3413B7411C62F737000B2AB7 /* MDSPullAnimationView.m */,
 				3413B7421C62F737000B2AB7 /* MDSPullUpToMore.h */,
@@ -455,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34A0BA641C6AEE25002B891A /* MDSNavigationController.m in Sources */,
+				349DB4B21C79C21E005AD278 /* MDSResponse.m in Sources */,
 				3413B6B31C61AB35000B2AB7 /* MDSSearchView.m in Sources */,
 				3413B7451C62F738000B2AB7 /* MDSPullUpToMore.m in Sources */,
 				3413B6A91C619BC7000B2AB7 /* Article+CoreDataProperties.m in Sources */,

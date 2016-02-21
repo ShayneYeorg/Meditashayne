@@ -33,6 +33,10 @@
     return articles;
 }
 
++ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack {
+    
+}
+
 //根据objectID取出某条随笔
 + (Article *)fetchArticlesWithObjectID:(NSManagedObjectID *)objectID {
     Article *article = [kManagedObjectContext objectWithID:objectID];

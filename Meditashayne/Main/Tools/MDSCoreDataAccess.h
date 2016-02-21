@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MDSResponse.h"
 #import "Article+CoreDataProperties.h"
 
 @interface MDSCoreDataAccess : NSObject
@@ -18,6 +19,8 @@
  *  @param linmit     本页数据条数
  */
 + (NSMutableArray *)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit;
+
++ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
 
 /**
  *  根据objectID取出某条随笔

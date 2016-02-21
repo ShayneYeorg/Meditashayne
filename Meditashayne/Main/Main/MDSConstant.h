@@ -39,7 +39,9 @@
 #define kContent_CenterX kContent_Width/2
 #define kContent_CenterY kContent_Height/2
 
-
+//MDSResponse
+#define RESPONSE_CODE_SUCCEED         @"000"//查询成功
+#define RESPONSE_CODE_FAILD           @"111"//查询失败
 
 
 
