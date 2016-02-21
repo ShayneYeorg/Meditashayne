@@ -18,8 +18,6 @@
  *  @param offset     本页首条数据的下标
  *  @param linmit     本页数据条数
  */
-+ (NSMutableArray *)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit;
-
 + (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
 
 /**

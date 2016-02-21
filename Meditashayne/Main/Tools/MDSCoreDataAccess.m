@@ -11,7 +11,10 @@
 @implementation MDSCoreDataAccess
 
 //查询所有数据
-+ (NSMutableArray *)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit {
++ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack {
+    //Response
+    MDSResponse *response = [[MDSResponse alloc]init];
+    
     //request和entity
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Article" inManagedObjectContext:kManagedObjectContext];
@@ -29,12 +32,18 @@
     //查询
     NSError *error = nil;
     NSMutableArray *articles = [[kManagedObjectContext executeFetchRequest:request error:&error] mutableCopy];
-    if (articles == nil) MDSLog(@"查询所有数据时发生错误:%@,%@",error,[error userInfo]);
-    return articles;
-}
-
-+ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack {
     
+    //回调
+    if (articles == nil) {
+        MDSLog(@"查询所有数据时发生错误:%@,%@",error,[error userInfo]);
+        response.code = RESPONSE_CODE_FAILD;
+        response.desc = @"读取失败";
+    } else {
+        response.code = RESPONSE_CODE_SUCCEED;
+        response.desc = @"读取成功";
+        response.responseDic = [NSDictionary dictionaryWithObjectsAndKeys:articles, @"articles", nil];
+    }
+    callBack(response);
 }
 
 //根据objectID取出某条随笔

@@ -13,6 +13,7 @@
 #import "MDSAritcleCell.h"
 #import "MDSSearchView.h"
 #import "MDSPullUpToMore.h"
+#import "SVProgressHUD.h"
 
 @interface MDSArticleListViewController () <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, MDSSearchViewDelegate>
 
@@ -274,16 +275,40 @@
 #pragma mark - Core Data
 
 - (void)fetchArticles {
-    NSArray *articlesOfOnePage = [MDSCoreDataAccess fetchArticlesWithOffset:self.articles.count limit:kPageLimit];
-    [self.articles addObjectsFromArray:articlesOfOnePage];
-    [self.tableView reloadData];
-    
-    if (articlesOfOnePage.count < kPageLimit) {
-        self.tableView.pullUpToMoreView.canMore = NO;
-        
-    } else {
-        [self.tableView.pullUpToMoreView stopAnimation];
-    }
+    __weak typeof(self) weakSelf = self;
+    [MDSCoreDataAccess fetchArticlesWithOffset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
+        if (response) {
+            if ([response.code isEqualToString:RESPONSE_CODE_SUCCEED]) {
+                NSArray *articlesOfOnePage = response.responseDic[@"articles"];
+                [weakSelf.articles addObjectsFromArray:articlesOfOnePage];
+                [weakSelf.tableView reloadData];
+                
+                if (articlesOfOnePage.count < kPageLimit) {
+                    weakSelf.tableView.pullUpToMoreView.canMore = NO;
+                    
+                } else {
+                    [weakSelf.tableView.pullUpToMoreView stopAnimation];
+                }
+                
+            } else {
+                [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+                [SVProgressHUD showErrorWithStatus:response.desc];
+            }
+            
+        } else {
+            [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+            [SVProgressHUD showErrorWithStatus:@"读取失败"];
+        }
+    }];
 }
 
 @end
+
+
+
+
+
+
+
+
+
