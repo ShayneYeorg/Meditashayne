@@ -13,6 +13,11 @@ typedef enum _LoadType {
     LoadType_Load_More
 } LoadType;
 
+typedef enum _QueryType {
+    Query_Type_Title = 0,
+    Query_Type_Content
+} QueryType;
+
 @interface MDSTool : NSObject
 
 @end

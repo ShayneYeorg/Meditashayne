@@ -34,6 +34,7 @@
  *  @param searchStr  查询条件
  */
 + (NSMutableArray *)queryArticlesAccordingTo:(NSString *)searchStr;
++ (void)queryArticlesAccordingTo:(NSString *)searchStr queryType:(QueryType)queryType offset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
 
 /**
  *  删除随笔
