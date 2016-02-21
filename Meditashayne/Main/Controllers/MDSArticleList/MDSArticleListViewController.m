@@ -36,6 +36,8 @@
     [self configTableView];
     [self configSearchView];
     [self fetchArticles];
+    
+    [self addNotifications];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -48,6 +50,7 @@
 }
 
 - (void)dealloc {
+    [self removeNotifications];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,6 +112,9 @@
 - (void)addNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshTableView) name:ARTICLE_CREATE_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshCell:) name:ARTICLE_ALTER_NOTIFICATION object:nil];
+}
+
+- (void)addKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
@@ -116,6 +122,9 @@
 - (void)removeNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_CREATE_NOTIFICATION object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ARTICLE_ALTER_NOTIFICATION object:nil];
+}
+
+- (void)removeKeyboardNotifications {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
@@ -146,15 +155,17 @@
 
 //Hidden和Show两种状态可以不指定moveDistance
 - (void)moveSearchViewForState:(SearchViewState)state moveDistance:(CGFloat)moveDistance {
+    if (self.searchView.isDragging) return;
+    
     switch (state) {
         case Search_View_State_Hidden:
             moveDistance = 0;
-            [self removeNotifications];
+            [self removeKeyboardNotifications];
             break;
             
         case Search_View_State_Show:
             moveDistance = -105;
-            [self addNotifications];
+            [self addKeyboardNotifications];
             break;
             
         default:
@@ -194,7 +205,6 @@
     CGRect searchViewFrame = self.searchView.frame;
     searchViewFrame.origin.y = self.searchViewLastY + dragDistance;
     self.searchView.frame = searchViewFrame;
-//    MDSLog(@"%f", searchViewFrame.origin.y);
 }
 
 - (void)searchViewDidEndDragging:(MDSSearchView *)searchView {

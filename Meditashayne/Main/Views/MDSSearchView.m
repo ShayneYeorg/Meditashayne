@@ -39,6 +39,7 @@
     [layer setBorderWidth:0.5];
     [layer setBorderColor:[RGB(50, 50, 50) CGColor]];
     
+    self.isDragging = NO;
 }
 
 //跳过当前view由subview接收事件
@@ -65,12 +66,14 @@
     if (gesture.state == UIGestureRecognizerStateChanged) {
         if (point.y != 0) {
             if ([self.delegate respondsToSelector:@selector(searchView:didDragging:)]) {
+                self.isDragging = YES;
                 [self.delegate searchView:self didDragging:point.y];
             }
         }
         
     } else if (gesture.state == UIGestureRecognizerStateEnded) {
         if ([self.delegate respondsToSelector:@selector(searchViewDidEndDragging:)]) {
+            self.isDragging = NO;
             [self.delegate searchViewDidEndDragging:self];
         }
     }

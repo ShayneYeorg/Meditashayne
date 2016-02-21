@@ -28,6 +28,7 @@ typedef enum _SearchViewState {
 
 @property (nonatomic, strong) id <MDSSearchViewDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *searchfield; //搜索框
+@property (nonatomic, assign) BOOL isDragging;//控件是否正在拖动
 
 + (instancetype)loadFromNibWithFrame:(CGRect)frame;
 //+ (instancetype)loadFromNib;
