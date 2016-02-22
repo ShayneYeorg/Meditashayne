@@ -20,6 +20,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *articles;
 @property (nonatomic, strong) MDSSearchView *searchView;
+@property (nonatomic, copy) NSString *searchHandler;//搜索关键字
+@property (nonatomic, assign) QueryType queryType;//搜索方法（标题、内容或无）
 @property (nonatomic, assign) CGFloat searchViewInitialY;//searchView.frame初始的y值
 @property (nonatomic, assign) CGFloat searchViewLastY;//searchView.frame上次静止时的y值
 
@@ -64,6 +66,8 @@
     self.title = @"Meditashayne";
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
+    self.searchHandler = @"";
+    self.queryType = Query_Type_None;
 }
 
 - (void)configCreateBarBtn {
@@ -131,7 +135,6 @@
 }
 
 - (void)refreshTableView {
-//    [self.articles removeAllObjects];
     [self fetchArticlesWithLoadType:LoadType_First_Load];
 }
 
@@ -195,7 +198,17 @@
 #pragma mark - MDSSearchViewDelegate
 
 - (void)searchViewDidClickSearchBtn:(MDSSearchView *)searchView {
+    self.searchHandler = self.searchView.searchfield.text;
+    if (self.searchHandler.length) {
+        self.title = self.searchHandler;
+        self.queryType = self.searchView.queryType;
+        
+    } else {
+        self.title = @"Meditashayne";
+        self.queryType = Query_Type_None;
+    }
     
+    [self fetchArticlesWithLoadType:LoadType_First_Load];
 }
 
 - (void)searchView:(MDSSearchView *)searchView didDragging:(CGFloat)dragDistance {
@@ -220,14 +233,6 @@
 }
 
 #pragma mark - UITextFieldDelegate
-
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    
-//}
-//
-//- (void)textFieldDidEndEditing:(UITextField *)textField {
-//    
-//}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if ([self.searchView.searchfield isFirstResponder]) {
@@ -281,7 +286,7 @@
     }
     
     __weak typeof(self) weakSelf = self;
-    [MDSCoreDataAccess queryArticlesAccordingTo:@"" queryType:Query_Type_None offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
+    [MDSCoreDataAccess queryArticlesAccordingTo:self.searchHandler queryType:self.queryType offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
             if ([response.code isEqualToString:RESPONSE_CODE_SUCCEED]) {
                 NSArray *articlesOfOnePage = response.responseDic[@"articles"];

@@ -58,6 +58,16 @@
     return NO;
 }
 
+#pragma mark - Getter
+
+- (QueryType)queryType {
+    _queryType = Query_Type_Content;
+    if (self.searchType.selectedSegmentIndex == 0) {
+        _queryType = Query_Type_Title;
+    }
+    return _queryType;
+}
+
 #pragma mark - Action
 
 - (IBAction)panGestureAction:(id)sender {
