@@ -36,7 +36,7 @@
     [self configCreateBarBtn];
     [self configTableView];
     [self configSearchView];
-    [self fetchArticles];
+    [self fetchArticlesWithLoadType:LoadType_First_Load];
     
     [self addNotifications];
 }
@@ -89,7 +89,7 @@
     __weak MDSArticleListViewController *weakSelf = self;
     [self.tableView addPullUpToMoreWithActionHandler:^{
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [weakSelf fetchArticles];
+            [weakSelf fetchArticlesWithLoadType:LoadType_Load_More];
         });
     }];
 }
@@ -131,8 +131,8 @@
 }
 
 - (void)refreshTableView {
-    [self.articles removeAllObjects];
-    [self fetchArticles];
+//    [self.articles removeAllObjects];
+    [self fetchArticlesWithLoadType:LoadType_First_Load];
 }
 
 - (void)refreshCell:(NSNotification *)notification {
@@ -274,7 +274,12 @@
 
 #pragma mark - Core Data
 
-- (void)fetchArticles {
+- (void)fetchArticlesWithLoadType:(LoadType)loadType {
+    if (loadType == LoadType_First_Load) {
+        self.tableView.pullUpToMoreView.canMore = YES;
+        [self.articles removeAllObjects];
+    }
+    
     __weak typeof(self) weakSelf = self;
     [MDSCoreDataAccess queryArticlesAccordingTo:@"" queryType:Query_Type_None offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
