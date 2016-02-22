@@ -276,7 +276,7 @@
 
 - (void)fetchArticles {
     __weak typeof(self) weakSelf = self;
-    [MDSCoreDataAccess fetchArticlesWithOffset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
+    [MDSCoreDataAccess queryArticlesAccordingTo:@"" queryType:Query_Type_None offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
             if ([response.code isEqualToString:RESPONSE_CODE_SUCCEED]) {
                 NSArray *articlesOfOnePage = response.responseDic[@"articles"];

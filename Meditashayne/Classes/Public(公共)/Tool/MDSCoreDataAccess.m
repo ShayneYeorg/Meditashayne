@@ -91,12 +91,14 @@
     [request setSortDescriptors:sortDescriptors];
     
     //设置查询条件
-    NSString *str = [NSString stringWithFormat:@"title LIKE '*%@*'", searchStr];
-    if (queryType == Query_Type_Content) {
-        str = [NSString stringWithFormat:@"content LIKE '*%@*'", searchStr];
+    if (searchStr && searchStr.length) {
+        NSString *str = [NSString stringWithFormat:@"title LIKE '*%@*'", searchStr];
+        if (queryType == Query_Type_Content) {
+            str = [NSString stringWithFormat:@"content LIKE '*%@*'", searchStr];
+        }
+        NSPredicate *pre = [NSPredicate predicateWithFormat:str];
+        [request setPredicate:pre];
     }
-    NSPredicate *pre = [NSPredicate predicateWithFormat:str];
-    [request setPredicate:pre];
     
     //设置分页规则
     [request setFetchLimit:limit];
