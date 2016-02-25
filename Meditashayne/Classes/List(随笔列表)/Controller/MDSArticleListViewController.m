@@ -154,7 +154,7 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-    [self moveSearchViewForState:Search_View_State_Show moveDistance:0];
+    [self moveSearchViewForState:Search_View_State_Hidden moveDistance:0];
 }
 
 //Hidden和Show两种状态可以不指定moveDistance
@@ -198,6 +198,10 @@
 #pragma mark - MDSSearchViewDelegate
 
 - (void)searchViewDidClickSearchBtn:(MDSSearchView *)searchView {
+    if ([self.searchView.searchfield isFirstResponder]) {
+        [self.searchView.searchfield resignFirstResponder];
+    }
+    
     self.searchHandler = self.searchView.searchfield.text;
     if (self.searchHandler.length) {
         self.title = self.searchHandler;

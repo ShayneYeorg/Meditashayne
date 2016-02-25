@@ -47,19 +47,19 @@
     self.progressView3.frame = viewFrame3;
     
     __weak typeof(self) weakSelf = self;
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.2 animations:^{
         CGRect viewFrame1 = weakSelf.progressView1.frame;
         viewFrame1.size.width = self.animationViewWidth*0.6;
         weakSelf.progressView1.frame = viewFrame1;
         
     } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:0.2 animations:^{
             CGRect viewFrame2 = weakSelf.progressView2.frame;
             viewFrame2.size.width = self.animationViewWidth*0.6;
             weakSelf.progressView2.frame = viewFrame2;
             
         } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.3 animations:^{
+            [UIView animateWithDuration:0.2 animations:^{
                 CGRect viewFrame3 = weakSelf.progressView3.frame;
                 viewFrame3.size.width = self.animationViewWidth*0.6;
                 weakSelf.progressView3.frame = viewFrame3;

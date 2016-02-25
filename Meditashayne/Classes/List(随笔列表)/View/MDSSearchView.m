@@ -22,7 +22,6 @@
 #pragma mark - Public
 
 + (instancetype)loadFromNibWithFrame:(CGRect)frame {
-//+ (instancetype)loadFromNib {
     MDSSearchView *view = [[NSBundle mainBundle] loadNibNamed:@"MDSSearchView" owner:nil options:nil][0];
     [view setFrame:frame];
     [view configViewDetails];
@@ -40,6 +39,10 @@
     [layer setBorderColor:[RGB(50, 50, 50) CGColor]];
     
     self.isDragging = NO;
+    
+    UIImageView *searchImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"search_icon"]];
+    [searchImage setFrame:self.viewHandler.bounds];
+    [self.viewHandler addSubview:searchImage];
 }
 
 //跳过当前view由subview接收事件

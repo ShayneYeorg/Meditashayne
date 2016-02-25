@@ -12,8 +12,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADT-tV-FqS">
-                    <rect key="frame" x="250" y="0.0" width="40" height="40"/>
-                    <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="240" y="0.0" width="40" height="40"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="Nvb-3W-5Go"/>
@@ -88,9 +87,25 @@
                             <color key="textColor" red="0.19607843137254902" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ocQ-S2-fow">
+                            <rect key="frame" x="0.0" y="0.0" width="240.5" height="0.5"/>
+                            <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="AQE-Xr-eD5"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2HQ-S8-8K7">
+                            <rect key="frame" x="280" y="0.0" width="40" height="0.5"/>
+                            <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="0.5" id="D9f-c6-SL2"/>
+                                <constraint firstAttribute="width" constant="40" id="tL0-NL-SuF"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="2HQ-S8-8K7" firstAttribute="top" secondItem="zYM-PE-Gci" secondAttribute="top" id="2xv-ad-8M7"/>
                         <constraint firstItem="WNj-NB-leQ" firstAttribute="top" secondItem="zYM-PE-Gci" secondAttribute="top" constant="14" id="3VM-gU-sYk"/>
                         <constraint firstItem="DDl-qE-gPB" firstAttribute="leading" secondItem="zYM-PE-Gci" secondAttribute="leading" constant="50" id="7l9-cc-8Zd"/>
                         <constraint firstAttribute="trailing" secondItem="WNj-NB-leQ" secondAttribute="trailing" constant="20" id="9Kw-Xn-lQ5"/>
@@ -98,7 +113,11 @@
                         <constraint firstItem="kBf-CT-Rl5" firstAttribute="centerX" secondItem="zYM-PE-Gci" secondAttribute="centerX" id="BjD-SX-eNd"/>
                         <constraint firstAttribute="trailing" secondItem="p8w-XK-HVh" secondAttribute="trailing" constant="50" id="CcK-7h-qcW"/>
                         <constraint firstAttribute="bottom" secondItem="kBf-CT-Rl5" secondAttribute="bottom" constant="55" id="Kuv-cE-2ga"/>
+                        <constraint firstItem="ocQ-S2-fow" firstAttribute="leading" secondItem="zYM-PE-Gci" secondAttribute="leading" id="NgB-zm-7bS"/>
                         <constraint firstItem="WNj-NB-leQ" firstAttribute="leading" secondItem="zYM-PE-Gci" secondAttribute="leading" constant="20" id="Pio-Kv-mza"/>
+                        <constraint firstAttribute="trailing" secondItem="ocQ-S2-fow" secondAttribute="trailing" constant="79.5" id="Xy0-7K-9Nj"/>
+                        <constraint firstItem="ocQ-S2-fow" firstAttribute="top" secondItem="zYM-PE-Gci" secondAttribute="top" id="e8H-Dv-J4l"/>
+                        <constraint firstAttribute="trailing" secondItem="2HQ-S8-8K7" secondAttribute="trailing" id="lfh-cr-CRa"/>
                         <constraint firstItem="DDl-qE-gPB" firstAttribute="top" secondItem="WNj-NB-leQ" secondAttribute="bottom" constant="14" id="vyH-zP-uIE"/>
                     </constraints>
                 </view>
@@ -106,10 +125,10 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="zYM-PE-Gci" secondAttribute="trailing" id="GWB-iM-rMg"/>
                 <constraint firstItem="zYM-PE-Gci" firstAttribute="top" secondItem="ADT-tV-FqS" secondAttribute="bottom" id="Ukb-9d-yqZ"/>
+                <constraint firstAttribute="trailing" secondItem="ADT-tV-FqS" secondAttribute="trailing" constant="40" id="cmv-ag-Smt"/>
                 <constraint firstAttribute="bottom" secondItem="zYM-PE-Gci" secondAttribute="bottom" id="jAF-zT-qbf"/>
                 <constraint firstItem="ADT-tV-FqS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mcZ-xN-FLj"/>
                 <constraint firstItem="zYM-PE-Gci" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pJ8-kE-ziw"/>
-                <constraint firstAttribute="trailing" secondItem="ADT-tV-FqS" secondAttribute="trailing" constant="30" id="pry-Df-OPX"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
