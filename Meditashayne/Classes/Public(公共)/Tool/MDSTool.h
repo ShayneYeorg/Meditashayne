@@ -21,4 +21,8 @@ typedef enum _QueryType {
 
 @interface MDSTool : NSObject
 
++ (UIWindow *)getWindow;
++ (void)showShadeViewWithText:(NSString *)text;
++ (void)dismissShadeView;
+
 @end

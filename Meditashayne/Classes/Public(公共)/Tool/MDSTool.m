@@ -7,7 +7,48 @@
 //
 
 #import "MDSTool.h"
+#import "MDSPullAnimationView.h"
 
 @implementation MDSTool
+
++ (UIWindow *)getWindow {
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    return window;
+}
+
++ (void)showShadeViewWithText:(NSString *)text {
+    UIWindow *window = [MDSTool getWindow];
+    [[window viewWithTag:362912631]removeFromSuperview];
+    UIView *view = [[UIView alloc]initWithFrame:window.bounds];
+    view.tag = 362912631;
+    UIView *backView = [[UIView alloc]initWithFrame:window.bounds];
+    backView.backgroundColor = [UIColor blackColor];
+    backView.alpha = 0.4;
+    [view addSubview:backView];
+    
+    UIView *whiteView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 130, 110)];
+    whiteView.backgroundColor = [UIColor whiteColor];
+    whiteView.layer.cornerRadius=8;
+    MDSPullAnimationView *activity = [[MDSPullAnimationView alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
+    activity.center = CGPointMake(130/2, 45);
+    activity.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
+    [activity startAnimation];
+    [whiteView addSubview:activity];
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0,67, 130, 35)];
+    label.backgroundColor = [UIColor clearColor];
+    label.font = [UIFont systemFontOfSize:17];
+    label.textAlignment = NSTextAlignmentCenter;
+    label.text = text;
+    [whiteView addSubview:label];
+    [view addSubview:whiteView];
+    whiteView.center = CGPointMake(view.bounds.size.width/2, view.bounds.size.height/2);
+    
+    [window addSubview:view];
+}
+
++ (void)dismissShadeView {
+    UIWindow *window = [MDSTool getWindow];
+    [[window viewWithTag:362912631]removeFromSuperview];
+}
 
 @end

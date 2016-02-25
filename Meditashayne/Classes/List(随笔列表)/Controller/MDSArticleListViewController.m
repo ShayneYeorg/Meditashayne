@@ -281,6 +281,7 @@
 
 - (void)fetchArticlesWithLoadType:(LoadType)loadType {
     if (loadType == LoadType_First_Load) {
+        [MDSTool showShadeViewWithText:@"读取中..."];
         self.tableView.pullUpToMoreView.canMore = YES;
         [self.articles removeAllObjects];
     }
@@ -308,6 +309,10 @@
         } else {
             [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
             [SVProgressHUD showErrorWithStatus:@"读取失败"];
+        }
+        
+        if (loadType == LoadType_First_Load) {
+            [MDSTool dismissShadeView];
         }
     }];
 }
