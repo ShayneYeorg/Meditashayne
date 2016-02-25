@@ -19,7 +19,7 @@
  *  @param linmit     本页数据条数
  *  @param callBack   回调
  */
-+ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
+//+ (void)fetchArticlesWithOffset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
 
 /**
  *  根据objectID取出某条随笔
@@ -33,7 +33,7 @@
  *
  *  @param searchStr  查询条件
  */
-+ (NSMutableArray *)queryArticlesAccordingTo:(NSString *)searchStr;
+//+ (NSMutableArray *)queryArticlesAccordingTo:(NSString *)searchStr;
 + (void)queryArticlesAccordingTo:(NSString *)searchStr queryType:(QueryType)queryType offset:(NSInteger)offset limit:(NSInteger)limit callBack:(void(^)(MDSResponse *response))callBack;
 
 /**
