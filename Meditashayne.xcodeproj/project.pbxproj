@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3482151A1C7EF39300F4239F /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348215171C7EF39300F4239F /* MDSPullAnimationView.m */; };
+		3482151B1C7EF39300F4239F /* MDSShadeViewAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348215191C7EF39300F4239F /* MDSShadeViewAnimationView.m */; };
 		349DB4E91C79CC7A005AD278 /* MDSArticleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4B71C79CC7A005AD278 /* MDSArticleDetailViewController.m */; };
 		349DB4EA1C79CC7A005AD278 /* MDSArticleDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 349DB4B81C79CC7A005AD278 /* MDSArticleDetailViewController.xib */; };
 		349DB4EB1C79CC7A005AD278 /* MDSArticleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4BC1C79CC7A005AD278 /* MDSArticleListViewController.m */; };
@@ -26,7 +28,6 @@
 		349DB4F91C79CC7A005AD278 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4DB1C79CC7A005AD278 /* Article.m */; };
 		349DB4FA1C79CC7A005AD278 /* Meditashayne.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4DC1C79CC7A005AD278 /* Meditashayne.xcdatamodeld */; };
 		349DB4FB1C79CC7A005AD278 /* MDSCoreDataAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */; };
-		349DB4FC1C79CC7A005AD278 /* MDSPullAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */; };
 		349DB4FD1C79CC7A005AD278 /* MDSPullUpToMore.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */; };
 		349DB4FE1C79CC7A005AD278 /* MDSResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E61C79CC7A005AD278 /* MDSResponse.m */; };
 		349DB4FF1C79CC7A005AD278 /* MDSTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 349DB4E81C79CC7A005AD278 /* MDSTool.m */; };
@@ -56,6 +57,10 @@
 
 /* Begin PBXFileReference section */
 		3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		348215161C7EF39300F4239F /* MDSPullAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullAnimationView.h; sourceTree = "<group>"; };
+		348215171C7EF39300F4239F /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
+		348215181C7EF39300F4239F /* MDSShadeViewAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSShadeViewAnimationView.h; sourceTree = "<group>"; };
+		348215191C7EF39300F4239F /* MDSShadeViewAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSShadeViewAnimationView.m; sourceTree = "<group>"; };
 		349DB4B61C79CC7A005AD278 /* MDSArticleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSArticleDetailViewController.h; sourceTree = "<group>"; };
 		349DB4B71C79CC7A005AD278 /* MDSArticleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSArticleDetailViewController.m; sourceTree = "<group>"; };
 		349DB4B81C79CC7A005AD278 /* MDSArticleDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MDSArticleDetailViewController.xib; sourceTree = "<group>"; };
@@ -88,8 +93,6 @@
 		349DB4DD1C79CC7A005AD278 /* Meditashayne.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Meditashayne.xcdatamodel; sourceTree = "<group>"; };
 		349DB4DF1C79CC7A005AD278 /* MDSCoreDataAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSCoreDataAccess.h; sourceTree = "<group>"; };
 		349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSCoreDataAccess.m; sourceTree = "<group>"; };
-		349DB4E11C79CC7A005AD278 /* MDSPullAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullAnimationView.h; sourceTree = "<group>"; };
-		349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullAnimationView.m; sourceTree = "<group>"; };
 		349DB4E31C79CC7A005AD278 /* MDSPullUpToMore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSPullUpToMore.h; sourceTree = "<group>"; };
 		349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDSPullUpToMore.m; sourceTree = "<group>"; };
 		349DB4E51C79CC7A005AD278 /* MDSResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDSResponse.h; sourceTree = "<group>"; };
@@ -134,6 +137,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		348215151C7EF39300F4239F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				348215161C7EF39300F4239F /* MDSPullAnimationView.h */,
+				348215171C7EF39300F4239F /* MDSPullAnimationView.m */,
+				348215181C7EF39300F4239F /* MDSShadeViewAnimationView.h */,
+				348215191C7EF39300F4239F /* MDSShadeViewAnimationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		349DB4B31C79CC7A005AD278 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -198,8 +212,9 @@
 			isa = PBXGroup;
 			children = (
 				349DB4D21C79CC7A005AD278 /* Main */,
-				349DB4C61C79CC7A005AD278 /* Controller */,
 				349DB4D71C79CC7A005AD278 /* Model */,
+				348215151C7EF39300F4239F /* View */,
+				349DB4C61C79CC7A005AD278 /* Controller */,
 				349DB4DE1C79CC7A005AD278 /* Tool */,
 				349DB4C91C79CC7A005AD278 /* Lib */,
 			);
@@ -265,8 +280,6 @@
 			children = (
 				349DB4DF1C79CC7A005AD278 /* MDSCoreDataAccess.h */,
 				349DB4E01C79CC7A005AD278 /* MDSCoreDataAccess.m */,
-				349DB4E11C79CC7A005AD278 /* MDSPullAnimationView.h */,
-				349DB4E21C79CC7A005AD278 /* MDSPullAnimationView.m */,
 				349DB4E31C79CC7A005AD278 /* MDSPullUpToMore.h */,
 				349DB4E41C79CC7A005AD278 /* MDSPullUpToMore.m */,
 				349DB4E51C79CC7A005AD278 /* MDSResponse.h */,
@@ -472,16 +485,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				349DB4F71C79CC7A005AD278 /* main.m in Sources */,
+				3482151A1C7EF39300F4239F /* MDSPullAnimationView.m in Sources */,
 				349DB4ED1C79CC7A005AD278 /* MDSAritcleCell.m in Sources */,
 				349DB4EB1C79CC7A005AD278 /* MDSArticleListViewController.m in Sources */,
 				349DB4F61C79CC7A005AD278 /* AppDelegate.m in Sources */,
 				349DB4E91C79CC7A005AD278 /* MDSArticleDetailViewController.m in Sources */,
 				349DB4F81C79CC7A005AD278 /* Article+CoreDataProperties.m in Sources */,
 				349DB4F51C79CC7A005AD278 /* SVRadialGradientLayer.m in Sources */,
-				349DB4FC1C79CC7A005AD278 /* MDSPullAnimationView.m in Sources */,
 				349DB4FD1C79CC7A005AD278 /* MDSPullUpToMore.m in Sources */,
 				349DB4F41C79CC7A005AD278 /* SVProgressHUD.m in Sources */,
 				349DB4F91C79CC7A005AD278 /* Article.m in Sources */,
+				3482151B1C7EF39300F4239F /* MDSShadeViewAnimationView.m in Sources */,
 				349DB4FE1C79CC7A005AD278 /* MDSResponse.m in Sources */,
 				349DB4EF1C79CC7A005AD278 /* MDSSearchView.m in Sources */,
 				349DB4F11C79CC7A005AD278 /* MDSNavigationController.m in Sources */,

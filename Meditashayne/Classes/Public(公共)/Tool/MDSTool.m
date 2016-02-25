@@ -7,7 +7,7 @@
 //
 
 #import "MDSTool.h"
-#import "MDSPullAnimationView.h"
+#import "MDSShadeViewAnimationView.h"
 
 @implementation MDSTool
 
@@ -29,8 +29,8 @@
     UIView *whiteView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 130, 110)];
     whiteView.backgroundColor = [UIColor whiteColor];
     whiteView.layer.cornerRadius=8;
-    MDSPullAnimationView *activity = [[MDSPullAnimationView alloc] initWithFrame:CGRectMake(0, 0, 35, 35)];
-    activity.center = CGPointMake(130/2, 45);
+    MDSShadeViewAnimationView *activity = [[MDSShadeViewAnimationView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    activity.center = CGPointMake(130/2, 40);
     activity.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleTopMargin;
     [activity startAnimation];
     [whiteView addSubview:activity];
@@ -39,6 +39,7 @@
     label.font = [UIFont systemFontOfSize:17];
     label.textAlignment = NSTextAlignmentCenter;
     label.text = text;
+    label.textColor = kAppTextCoclor;
     [whiteView addSubview:label];
     [view addSubview:whiteView];
     whiteView.center = CGPointMake(view.bounds.size.width/2, view.bounds.size.height/2);
