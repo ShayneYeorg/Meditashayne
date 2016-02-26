@@ -30,7 +30,7 @@
                             <constraint firstAttribute="height" constant="1" id="6lW-3p-ugU"/>
                         </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-7J-sFv">
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="content" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Jv7-7J-sFv">
                         <rect key="frame" x="8" y="29" width="304" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,7 +58,7 @@
                 <outlet property="seperatorLineHeight" destination="6lW-3p-ugU" id="dQt-QC-j2I"/>
                 <outlet property="titleLabel" destination="law-Rd-Vgj" id="lP2-XL-ukc"/>
             </connections>
-            <point key="canvasLocation" x="-389" y="379.25"/>
+            <point key="canvasLocation" x="-497" y="380.25"/>
         </tableViewCell>
     </objects>
 </document>
