@@ -14,20 +14,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="62"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="law-Rd-Vgj">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="标题" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="law-Rd-Vgj">
                         <rect key="frame" x="14" y="8" width="302" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="21" id="O18-iQ-Wxv"/>
                         </constraints>
-                        <attributedString key="attributedText">
-                            <fragment content="标题">
-                                <attributes>
-                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <font key="NSFont" size="14" name="PingFangSC-Medium"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cgO-zj-FPY">
@@ -37,31 +30,17 @@
                             <constraint firstAttribute="height" constant="1" id="6lW-3p-ugU"/>
                         </constraints>
                     </view>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="内容\n内容" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5tG-g3-F9b">
-                        <rect key="frame" x="8" y="29" width="304" height="32"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="304" id="gKU-p7-ffz"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="5tG-g3-F9b" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="EcP-IA-2hA"/>
                     <constraint firstAttribute="trailing" secondItem="law-Rd-Vgj" secondAttribute="trailing" constant="4" id="F2e-qK-mQi"/>
                     <constraint firstItem="law-Rd-Vgj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="14" id="QzV-OK-SfW"/>
                     <constraint firstItem="law-Rd-Vgj" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ZRT-53-Tlg"/>
                     <constraint firstAttribute="trailing" secondItem="cgO-zj-FPY" secondAttribute="trailing" id="bGL-4E-VNJ"/>
                     <constraint firstItem="cgO-zj-FPY" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hcw-nK-lZX"/>
-                    <constraint firstAttribute="bottom" secondItem="5tG-g3-F9b" secondAttribute="bottom" constant="1" id="m6e-w9-Rp7"/>
-                    <constraint firstItem="5tG-g3-F9b" firstAttribute="top" secondItem="law-Rd-Vgj" secondAttribute="bottom" id="uJY-lo-H5J"/>
                     <constraint firstAttribute="bottom" secondItem="cgO-zj-FPY" secondAttribute="bottom" id="ubl-L6-2e3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="contentLabel" destination="5tG-g3-F9b" id="dDW-ie-ztn"/>
-                <outlet property="contentLabelWidth" destination="gKU-p7-ffz" id="zX1-ZH-ii1"/>
                 <outlet property="seperatorLineHeight" destination="6lW-3p-ugU" id="dQt-QC-j2I"/>
                 <outlet property="titleLabel" destination="law-Rd-Vgj" id="lP2-XL-ukc"/>
             </connections>
