@@ -252,6 +252,10 @@
     return cell.cellHeight;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150;
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     MDSArticleDetailViewController *detailVC = [MDSArticleDetailViewController new];
     detailVC.alteringArticle = self.articles[indexPath.row];
@@ -285,7 +289,8 @@
 
 - (void)fetchArticlesWithLoadType:(LoadType)loadType {
     if (loadType == LoadType_First_Load) {
-        [MDSTool showShadeViewWithText:@"读取中..."];
+        [SVProgressHUD show];
+//        [MDSTool showShadeViewWithText:@"读取中..."];
         self.tableView.pullUpToMoreView.canMore = YES;
         [self.articles removeAllObjects];
     }
@@ -293,6 +298,11 @@
     __weak typeof(self) weakSelf = self;
     [MDSCoreDataAccess queryArticlesAccordingTo:self.searchHandler queryType:self.queryType offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
+            if (loadType == LoadType_First_Load) {
+                [SVProgressHUD dismiss];
+//                [MDSTool dismissShadeView];
+            }
+            
             if ([response.code isEqualToString:RESPONSE_CODE_SUCCEED]) {
                 NSArray *articlesOfOnePage = response.responseDic[@"articles"];
                 [weakSelf.articles addObjectsFromArray:articlesOfOnePage];
@@ -313,10 +323,6 @@
         } else {
             [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
             [SVProgressHUD showErrorWithStatus:@"读取失败"];
-        }
-        
-        if (loadType == LoadType_First_Load) {
-            [MDSTool dismissShadeView];
         }
     }];
 }

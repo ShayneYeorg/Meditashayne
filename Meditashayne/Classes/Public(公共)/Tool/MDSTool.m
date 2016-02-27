@@ -11,6 +11,8 @@
 
 @implementation MDSTool
 
+dispatch_queue_t shadeViewQueue = nil;
+
 + (UIWindow *)getWindow {
     UIWindow *window = [UIApplication sharedApplication].delegate.window;
     return window;
@@ -50,6 +52,7 @@
 + (void)dismissShadeView {
     UIWindow *window = [MDSTool getWindow];
     [[window viewWithTag:362912631]removeFromSuperview];
+    MDSLog(@"removeFromSuperview");
 }
 
 @end

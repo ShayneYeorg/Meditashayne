@@ -29,6 +29,7 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil] lastObject];
         cell.seperatorLineHeight.constant = 0.5;
+        MDSLog(@"cell");
     }
     return cell;
 }
