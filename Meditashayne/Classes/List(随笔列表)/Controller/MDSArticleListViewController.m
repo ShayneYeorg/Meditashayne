@@ -99,7 +99,7 @@
 }
 
 - (void)configSearchView {
-    self.searchViewInitialY = kScreen_Height - 60;
+    self.searchViewInitialY = kScreen_Height - 50;
     self.searchViewLastY = self.searchViewInitialY;
     self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
     self.searchView.delegate = self;
