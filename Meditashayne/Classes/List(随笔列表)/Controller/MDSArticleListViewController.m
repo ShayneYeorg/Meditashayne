@@ -99,7 +99,7 @@
 }
 
 - (void)configSearchView {
-    self.searchViewInitialY = kScreen_Height - 40;
+    self.searchViewInitialY = kScreen_Height - 60;
     self.searchViewLastY = self.searchViewInitialY;
     self.searchView = [MDSSearchView loadFromNibWithFrame:CGRectMake(0, self.searchViewInitialY, kScreen_Width, 800)];
     self.searchView.delegate = self;
@@ -289,7 +289,6 @@
 
 - (void)fetchArticlesWithLoadType:(LoadType)loadType {
     if (loadType == LoadType_First_Load) {
-        [SVProgressHUD show];
 //        [MDSTool showShadeViewWithText:@"读取中..."];
         self.tableView.pullUpToMoreView.canMore = YES;
         [self.articles removeAllObjects];
@@ -299,7 +298,6 @@
     [MDSCoreDataAccess queryArticlesAccordingTo:self.searchHandler queryType:self.queryType offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
             if (loadType == LoadType_First_Load) {
-                [SVProgressHUD dismiss];
 //                [MDSTool dismissShadeView];
             }
             
