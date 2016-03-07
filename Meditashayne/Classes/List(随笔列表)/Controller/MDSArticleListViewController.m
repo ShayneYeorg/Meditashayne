@@ -283,9 +283,7 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if ([self.searchView.searchfield isFirstResponder]) {
-        [self.searchView.searchfield resignFirstResponder];
-    }
+    [self searchViewDidClickSearchBtn:self.searchView];
     return YES;
 }
 
@@ -373,12 +371,4 @@
 }
 
 @end
-
-
-
-
-
-
-
-
 
