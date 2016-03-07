@@ -166,6 +166,10 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchingBackgroundViewTap)];
     [self.navigationController.navigationBar addGestureRecognizer:tap];
     
+    if (self.searchingBackgroundView) {
+        //在iOS8下，使用中文键盘会调用3次UIKeyboardWillShowNotification，所以每次都要先remove一下
+        [self.searchingBackgroundView removeFromSuperview];
+    }
     UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchingBackgroundViewTap)];
     self.searchingBackgroundView = [[UIView alloc]initWithFrame:self.view.bounds];
     self.searchingBackgroundView.backgroundColor = [UIColor clearColor];
@@ -214,7 +218,6 @@
 }
 
 - (void)searchingBackgroundViewTap {
-    MDSLog(@"tap");
     if ([self.searchView.searchfield isFirstResponder]) {
         [self.searchView.searchfield resignFirstResponder];
     }
