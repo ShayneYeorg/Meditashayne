@@ -8,7 +8,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MDSArticleDetailViewController">
             <connections>
                 <outlet property="contentField" destination="KUi-Dc-uLD" id="njz-Z2-EPK"/>
-                <outlet property="contentFieldBottomInset" destination="PN7-Gj-t7k" id="UbX-LC-dQa"/>
+                <outlet property="contentFieldBottomInset" destination="6dV-3b-6Ca" id="BeA-v4-e9F"/>
+                <outlet property="deleteBtn" destination="sul-jP-9xB" id="JP6-F3-9QX"/>
                 <outlet property="seperatorLineHeight" destination="ok2-fO-Kfr" id="3QY-Qc-itc"/>
                 <outlet property="titleField" destination="q5U-5W-8x0" id="uCp-v4-65i"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -35,19 +36,40 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KUi-Dc-uLD">
-                    <rect key="frame" x="8" y="115" width="304" height="445"/>
+                    <rect key="frame" x="8" y="115" width="304" height="407"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sul-jP-9xB">
+                    <rect key="frame" x="85" y="530" width="150" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="150" id="JQz-a2-sCv"/>
+                        <constraint firstAttribute="height" constant="30" id="Q8H-lu-iZ4"/>
+                    </constraints>
+                    <state key="normal" title="删除">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="3"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="deleteArticle:" destination="-1" eventType="touchUpInside" id="WTm-d7-L9R"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <gestureRecognizers/>
             <constraints>
+                <constraint firstAttribute="bottom" secondItem="KUi-Dc-uLD" secondAttribute="bottom" constant="46" id="6dV-3b-6Ca"/>
                 <constraint firstItem="cYC-MI-OEs" firstAttribute="top" secondItem="q5U-5W-8x0" secondAttribute="bottom" constant="5" id="8pX-wi-eIB"/>
+                <constraint firstAttribute="bottom" secondItem="sul-jP-9xB" secondAttribute="bottom" constant="8" id="LSL-a8-Thf"/>
                 <constraint firstItem="q5U-5W-8x0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="NRm-UL-xVL"/>
-                <constraint firstAttribute="bottom" secondItem="KUi-Dc-uLD" secondAttribute="bottom" constant="8" id="PN7-Gj-t7k"/>
                 <constraint firstAttribute="trailing" secondItem="cYC-MI-OEs" secondAttribute="trailing" constant="8" id="STX-be-mCQ"/>
                 <constraint firstAttribute="trailing" secondItem="q5U-5W-8x0" secondAttribute="trailing" constant="12" id="VBe-g5-spI"/>
+                <constraint firstItem="sul-jP-9xB" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cqp-n9-DRL"/>
                 <constraint firstItem="KUi-Dc-uLD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="f1a-tx-ckh"/>
                 <constraint firstItem="cYC-MI-OEs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ng5-rQ-NRx"/>
                 <constraint firstItem="q5U-5W-8x0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="74" id="t1D-h0-3r6"/>

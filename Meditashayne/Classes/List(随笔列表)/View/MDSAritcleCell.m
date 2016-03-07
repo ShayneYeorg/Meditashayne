@@ -39,8 +39,6 @@
     self.contentLabelWidth.constant = kContent_Width - 16;
     CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     
-//    self.cellHeight = size.height + 1;
-    
     return size.height + 1;
 }
 

@@ -120,9 +120,7 @@
             response.desc = @"读取成功";
             response.responseDic = [NSDictionary dictionaryWithObjectsAndKeys:articles, @"articles", nil];
         }
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            callBack(response);
-//        });
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             callBack(response);
         });
@@ -137,7 +135,7 @@
 }
 
 //新增数据
-+ (void)addArticleWithTitle:(NSString *)title content:(NSString *)content {
++ (Article *)addArticleWithTitle:(NSString *)title content:(NSString *)content {
     Article *article = [NSEntityDescription insertNewObjectForEntityForName:@"Article" inManagedObjectContext:kManagedObjectContext];
     article.title = title;
     article.content = [content dataUsingEncoding:NSUTF8StringEncoding];
@@ -147,6 +145,7 @@
     if ([kManagedObjectContext save:&error]) {
         if (error) MDSLog(@"新增时发生错误:%@,%@",error,[error userInfo]);
     }
+    return article;
 }
 
 //修改数据

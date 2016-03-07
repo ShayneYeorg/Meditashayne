@@ -47,7 +47,7 @@
  *  @param title      随笔标题
  *  @param content    随笔内容
  */
-+ (void)addArticleWithTitle:(NSString *)title content:(NSString *)content;
++ (Article *)addArticleWithTitle:(NSString *)title content:(NSString *)content;
 
 /**
  *  更新(修改)随笔

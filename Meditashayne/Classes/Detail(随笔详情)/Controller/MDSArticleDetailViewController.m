@@ -15,6 +15,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *titleField;
 @property (weak, nonatomic) IBOutlet UITextView *contentField;
+@property (weak, nonatomic) IBOutlet UIButton *deleteBtn; //删除按钮
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *contentFieldBottomInset;//随笔内容框与底部的距离
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *seperatorLineHeight;
@@ -54,6 +56,7 @@
         self.titleField.text = self.alteringArticle.title;
         self.contentField.text = [[NSString alloc]initWithData:self.alteringArticle.content encoding:NSUTF8StringEncoding];
         self.objectID = self.alteringArticle.objectID;
+        self.deleteBtn.hidden = NO;
         
     } else {
         //新建状态下
@@ -63,6 +66,7 @@
         [formatter setDateFormat:@"yyyy-MM-dd "];
         NSString *nowStr = [formatter stringFromDate:now];
         self.titleField.text = nowStr;
+        self.deleteBtn.hidden = YES;
     }
 }
 
@@ -118,10 +122,18 @@
         
     } else {
         //新增随笔
-        [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
+        self.alteringArticle = [MDSCoreDataAccess addArticleWithTitle:self.titleField.text content:self.contentField.text];
+        self.objectID = self.alteringArticle.objectID;
+        self.alteringArticleIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         [[NSNotificationCenter defaultCenter] postNotificationName:ARTICLE_CREATE_NOTIFICATION object:nil userInfo:nil];
         [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+        self.deleteBtn.hidden = NO;
     }
+}
+
+- (IBAction)deleteArticle:(id)sender {
+    //删除随笔
+    
 }
 
 #pragma mark - Keyboard Notification
@@ -149,7 +161,7 @@
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     //将随笔内容框恢复原本高度
-    self.contentFieldBottomInset.constant = 8;
+    self.contentFieldBottomInset.constant = 46;
 }
 
 @end
