@@ -39,7 +39,7 @@
 /**
  *  删除随笔
  */
-+ (void)removeArticle:(Article *)article;
++ (BOOL)removeArticle:(Article *)article;
 
 /**
  *  新增随笔

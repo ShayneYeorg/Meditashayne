@@ -133,8 +133,31 @@
 
 - (IBAction)deleteArticle:(id)sender {
     //删除随笔
-    
+    if (self.alteringArticle) {
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"删除随笔" message:@"确定删除当前随笔？" preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        __weak typeof(self) weakSelf = self;
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"删除" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            MDSLog(@"action");
+            [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+            if ([MDSCoreDataAccess removeArticle:self.alteringArticle]) {
+                [[NSNotificationCenter defaultCenter] postNotificationName:ARTICLE_CREATE_NOTIFICATION object:nil userInfo:nil];
+                [SVProgressHUD showSuccessWithStatus:@"删除成功"];
+                [weakSelf.navigationController popViewControllerAnimated:YES];
+                
+            } else {
+                [SVProgressHUD showErrorWithStatus:@"删除失败"];
+            }
+        }];
+        [alertController addAction:okAction];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
+
 
 #pragma mark - Keyboard Notification
 

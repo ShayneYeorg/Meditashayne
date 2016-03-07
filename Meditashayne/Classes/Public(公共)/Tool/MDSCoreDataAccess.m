@@ -128,10 +128,17 @@
 }
 
 //删除数据
-+ (void)removeArticle:(Article *)article {
++ (BOOL)removeArticle:(Article *)article {
     [kManagedObjectContext deleteObject:article];
     NSError *error = nil;
-    if(![kManagedObjectContext save:&error]) MDSLog(@"删除数据时发生错误:%@,%@",error,[error userInfo]);
+    if(![kManagedObjectContext save:&error])  {
+        MDSLog(@"删除数据时发生错误:%@,%@",error,[error userInfo]);
+        return NO;
+        
+    } else {
+        return YES;
+    }
+    
 }
 
 //新增数据

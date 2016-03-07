@@ -310,7 +310,6 @@
 
 - (void)fetchArticlesWithLoadType:(LoadType)loadType {
     if (loadType == LoadType_First_Load) {
-//        [MDSTool showShadeViewWithText:@"读取中..."];
         self.tableView.pullUpToMoreView.canMore = YES;
         [self.articles removeAllObjects];
     }
@@ -318,10 +317,6 @@
     __weak typeof(self) weakSelf = self;
     [MDSCoreDataAccess queryArticlesAccordingTo:self.searchHandler queryType:self.queryType offset:self.articles.count limit:kPageLimit callBack:^(MDSResponse *response) {
         if (response) {
-            if (loadType == LoadType_First_Load) {
-//                [MDSTool dismissShadeView];
-            }
-            
             if ([response.code isEqualToString:RESPONSE_CODE_SUCCEED]) {
                 NSArray *articlesOfOnePage = response.responseDic[@"articles"];
                 [weakSelf.articles addObjectsFromArray:articlesOfOnePage];
