@@ -22,6 +22,7 @@
 @property (nonatomic, strong) MDSSearchView *searchView;
 @property (nonatomic, copy) NSString *searchHandler;//搜索关键字
 @property (nonatomic, assign) QueryType queryType;//搜索方法（标题、内容或无）
+@property (nonatomic, strong) UIView *searchingBackgroundView; //搜索时的背景
 @property (nonatomic, assign) CGFloat searchViewInitialY;//searchView.frame初始的y值
 @property (nonatomic, assign) CGFloat searchViewLastY;//searchView.frame上次静止时的y值
 @property (nonatomic, strong) NSMutableDictionary *cellHeightDic; //用来存放所有cell的高度
@@ -111,6 +112,10 @@
 #pragma mark - Private
 
 - (void)createArticle {
+    if ([self.searchView.searchfield isFirstResponder]) {
+        [self.searchView.searchfield resignFirstResponder];
+    }
+    
     MDSArticleDetailViewController *articleDetailViewController = [MDSArticleDetailViewController new];
     [self.navigationController pushViewController:articleDetailViewController animated:YES];
 }
@@ -157,10 +162,26 @@
     NSValue *value = [userInfo objectForKey:UIKeyboardFrameEndUserInfoKey];
     CGRect keyboardRect = [value CGRectValue];
     [self moveSearchViewForState:Search_View_State_Input moveDistance:-(keyboardRect.size.height+105)];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchingBackgroundViewTap)];
+    [self.navigationController.navigationBar addGestureRecognizer:tap];
+    
+    UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(searchingBackgroundViewTap)];
+    self.searchingBackgroundView = [[UIView alloc]initWithFrame:self.view.bounds];
+    self.searchingBackgroundView.backgroundColor = [UIColor clearColor];
+    [self.view insertSubview:self.searchingBackgroundView belowSubview:self.searchView];
+    [self.searchingBackgroundView addGestureRecognizer:tap2];
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
     [self moveSearchViewForState:Search_View_State_Hidden moveDistance:0];
+    
+    if (self.searchingBackgroundView) {
+        [self.searchingBackgroundView removeFromSuperview];
+    }
+    for (UITapGestureRecognizer *g in self.navigationController.navigationBar.gestureRecognizers) {
+        [self.navigationController.navigationBar removeGestureRecognizer:g];
+    }
 }
 
 //Hidden和Show两种状态可以不指定moveDistance
@@ -190,6 +211,13 @@
     } completion:^(BOOL finished) {
         self.searchViewLastY = self.searchView.frame.origin.y;
     }];
+}
+
+- (void)searchingBackgroundViewTap {
+    MDSLog(@"tap");
+    if ([self.searchView.searchfield isFirstResponder]) {
+        [self.searchView.searchfield resignFirstResponder];
+    }
 }
 
 #pragma mark - Getter
