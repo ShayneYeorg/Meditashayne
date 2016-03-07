@@ -24,6 +24,7 @@
 @property (nonatomic, assign) QueryType queryType;//搜索方法（标题、内容或无）
 @property (nonatomic, assign) CGFloat searchViewInitialY;//searchView.frame初始的y值
 @property (nonatomic, assign) CGFloat searchViewLastY;//searchView.frame上次静止时的y值
+@property (nonatomic, strong) NSMutableDictionary *cellHeightDic; //用来存放所有cell的高度
 
 @end
 
@@ -135,6 +136,7 @@
 }
 
 - (void)refreshTableView {
+    [self.cellHeightDic removeAllObjects];
     [self fetchArticlesWithLoadType:LoadType_First_Load];
 }
 
@@ -143,6 +145,10 @@
     Article *alteredArticle = [MDSCoreDataAccess fetchArticlesWithObjectID:userInfo[@"objectID"]];
     NSIndexPath *alteredCellIndexPath = userInfo[@"indexPath"];
     self.articles[alteredCellIndexPath.row] = alteredArticle;
+    
+    MDSAritcleCell *cell = (MDSAritcleCell *)[self tableView:self.tableView cellForRowAtIndexPath:alteredCellIndexPath];
+    self.cellHeightDic[[NSString stringWithFormat:@"%zd", alteredCellIndexPath.row]] = [NSString stringWithFormat:@"%f", [cell calculateCellHeight]];
+    
     [self.tableView reloadRowsAtIndexPaths:@[alteredCellIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
@@ -193,6 +199,13 @@
         _articles = [NSMutableArray array];
     }
     return _articles;
+}
+
+- (NSMutableDictionary *)cellHeightDic {
+    if (_cellHeightDic == nil) {
+        _cellHeightDic = [NSMutableDictionary dictionary];
+    }
+    return _cellHeightDic;
 }
 
 #pragma mark - MDSSearchViewDelegate
@@ -248,8 +261,12 @@
 #pragma mark - UITableViewDelegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MDSAritcleCell *cell = (MDSAritcleCell *)[self tableView:self.tableView cellForRowAtIndexPath:indexPath];
-    return cell.cellHeight;
+    if ([self.cellHeightDic.allKeys containsObject:[NSString stringWithFormat:@"%zd", indexPath.row]]) {
+        return [self.cellHeightDic[[NSString stringWithFormat:@"%zd", indexPath.row]] floatValue];
+        
+    } else {
+        return 150;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -273,6 +290,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MDSAritcleCell *cell = [MDSAritcleCell cellWithTableView:tableView];
     cell.article = self.articles[indexPath.row];
+    
+    if (![self.cellHeightDic.allKeys containsObject:[NSString stringWithFormat:@"%zd", indexPath.row]]) {
+        [self.cellHeightDic setValue:[NSString stringWithFormat:@"%f", [cell calculateCellHeight]] forKey:[NSString stringWithFormat:@"%zd", indexPath.row]];
+    }
     
     return cell;
 }

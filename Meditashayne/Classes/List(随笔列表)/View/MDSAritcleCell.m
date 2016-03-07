@@ -29,14 +29,20 @@
     if (cell == nil) {
         cell = [[[NSBundle mainBundle] loadNibNamed:ID owner:nil options:nil] lastObject];
         cell.seperatorLineHeight.constant = 0.5;
-        MDSLog(@"cell");
     }
     return cell;
 }
 
-//+ (CGFloat)cellHeightWithArticleModel:(Article *)article {
-//    return 100;
-//}
+- (CGFloat)calculateCellHeight {
+    //要定好contentLabel的宽度，计算出来的高度才准确
+    //没有宽度，systemLayoutSizeFittingSize不知在哪里可以换行，行数就只会被计算为段落数
+    self.contentLabelWidth.constant = kContent_Width - 16;
+    CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    
+//    self.cellHeight = size.height + 1;
+    
+    return size.height + 1;
+}
 
 #pragma mark - Setter
 
@@ -45,13 +51,6 @@
     
     self.titleLabel.text = article.title;
     self.contentLabel.text = [[NSString alloc]initWithData:article.content encoding:NSUTF8StringEncoding];
-    
-    //要定好contentLabel的宽度，计算出来的高度才准确
-    //没有宽度，systemLayoutSizeFittingSize不知在哪里可以换行，行数就只会被计算为段落数
-    self.contentLabelWidth.constant = kContent_Width - 16;
-    CGSize size = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    
-    self.cellHeight = size.height + 1;
 }
 
 @end

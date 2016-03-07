@@ -13,9 +13,9 @@
 @interface MDSAritcleCell : UITableViewCell
 
 @property (nonatomic, strong) Article *article;
-@property (nonatomic, assign) CGFloat cellHeight;
+//@property (nonatomic, assign) CGFloat cellHeight;
 
 + (instancetype)cellWithTableView:(UITableView *)tableView;
-//+ (CGFloat)cellHeightWithArticleModel:(Article *)article;
+- (CGFloat)calculateCellHeight;
 
 @end
