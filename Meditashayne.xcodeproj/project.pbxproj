@@ -34,26 +34,7 @@
 		34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDF71C5EF36000633BD9 /* Main.storyboard */; };
 		34F1FDFE1C5EF36000633BD9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */; };
 		34F1FE011C5EF36000633BD9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34F1FDFF1C5EF36000633BD9 /* LaunchScreen.storyboard */; };
-		34F1FE0C1C5EF36000633BD9 /* MeditashayneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */; };
-		34F1FE171C5EF36000633BD9 /* MeditashayneUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		34F1FE081C5EF36000633BD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34F1FDE31C5EF35F00633BD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34F1FDEA1C5EF35F00633BD9;
-			remoteInfo = Meditashayne;
-		};
-		34F1FE131C5EF36000633BD9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 34F1FDE31C5EF35F00633BD9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 34F1FDEA1C5EF35F00633BD9;
-			remoteInfo = Meditashayne;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3413B6AB1C61A02C000B2AB7 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -104,30 +85,14 @@
 		34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F1FE001C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F1FE021C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneTests.m; sourceTree = "<group>"; };
 		34F1FE0D1C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Meditashayne.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneUITests.m; sourceTree = "<group>"; };
 		34F1FE181C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		34F1FDE81C5EF35F00633BD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F1FE041C5EF36000633BD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F1FE0F1C5EF36000633BD9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -304,8 +269,6 @@
 			isa = PBXGroup;
 			children = (
 				34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */,
-				34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */,
-				34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -369,42 +332,6 @@
 			productReference = 34F1FDEB1C5EF35F00633BD9 /* Meditashayne.app */;
 			productType = "com.apple.product-type.application";
 		};
-		34F1FE061C5EF36000633BD9 /* MeditashayneTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34F1FE1E1C5EF36000633BD9 /* Build configuration list for PBXNativeTarget "MeditashayneTests" */;
-			buildPhases = (
-				34F1FE031C5EF36000633BD9 /* Sources */,
-				34F1FE041C5EF36000633BD9 /* Frameworks */,
-				34F1FE051C5EF36000633BD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34F1FE091C5EF36000633BD9 /* PBXTargetDependency */,
-			);
-			name = MeditashayneTests;
-			productName = MeditashayneTests;
-			productReference = 34F1FE071C5EF36000633BD9 /* Meditashayne.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		34F1FE111C5EF36000633BD9 /* MeditashayneUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 34F1FE211C5EF36000633BD9 /* Build configuration list for PBXNativeTarget "MeditashayneUITests" */;
-			buildPhases = (
-				34F1FE0E1C5EF36000633BD9 /* Sources */,
-				34F1FE0F1C5EF36000633BD9 /* Frameworks */,
-				34F1FE101C5EF36000633BD9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				34F1FE141C5EF36000633BD9 /* PBXTargetDependency */,
-			);
-			name = MeditashayneUITests;
-			productName = MeditashayneUITests;
-			productReference = 34F1FE121C5EF36000633BD9 /* Meditashayne.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -416,14 +343,6 @@
 				TargetAttributes = {
 					34F1FDEA1C5EF35F00633BD9 = {
 						CreatedOnToolsVersion = 7.2;
-					};
-					34F1FE061C5EF36000633BD9 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 34F1FDEA1C5EF35F00633BD9;
-					};
-					34F1FE111C5EF36000633BD9 = {
-						CreatedOnToolsVersion = 7.2;
-						TestTargetID = 34F1FDEA1C5EF35F00633BD9;
 					};
 				};
 			};
@@ -441,8 +360,6 @@
 			projectRoot = "";
 			targets = (
 				34F1FDEA1C5EF35F00633BD9 /* Meditashayne */,
-				34F1FE061C5EF36000633BD9 /* MeditashayneTests */,
-				34F1FE111C5EF36000633BD9 /* MeditashayneUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -460,20 +377,6 @@
 				349DB4EE1C79CC7A005AD278 /* MDSAritcleCell.xib in Resources */,
 				349DB4EC1C79CC7A005AD278 /* MDSArticleListViewController.xib in Resources */,
 				34F1FDF91C5EF36000633BD9 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F1FE051C5EF36000633BD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F1FE101C5EF36000633BD9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,36 +409,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		34F1FE031C5EF36000633BD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34F1FE0C1C5EF36000633BD9 /* MeditashayneTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		34F1FE0E1C5EF36000633BD9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				34F1FE171C5EF36000633BD9 /* MeditashayneUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		34F1FE091C5EF36000633BD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34F1FDEA1C5EF35F00633BD9 /* Meditashayne */;
-			targetProxy = 34F1FE081C5EF36000633BD9 /* PBXContainerItemProxy */;
-		};
-		34F1FE141C5EF36000633BD9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 34F1FDEA1C5EF35F00633BD9 /* Meditashayne */;
-			targetProxy = 34F1FE131C5EF36000633BD9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		34F1FDF71C5EF36000633BD9 /* Main.storyboard */ = {
@@ -663,54 +537,6 @@
 			};
 			name = Release;
 		};
-		34F1FE1F1C5EF36000633BD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MeditashayneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneTests;
-				PRODUCT_NAME = Meditashayne;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meditashayne.app/Meditashayne";
-			};
-			name = Debug;
-		};
-		34F1FE201C5EF36000633BD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = MeditashayneTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneTests;
-				PRODUCT_NAME = Meditashayne;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Meditashayne.app/Meditashayne";
-			};
-			name = Release;
-		};
-		34F1FE221C5EF36000633BD9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MeditashayneUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneUITests;
-				PRODUCT_NAME = Meditashayne;
-				TEST_TARGET_NAME = Meditashayne;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		34F1FE231C5EF36000633BD9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = MeditashayneUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.MeditashayneUITests;
-				PRODUCT_NAME = Meditashayne;
-				TEST_TARGET_NAME = Meditashayne;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -728,24 +554,6 @@
 			buildConfigurations = (
 				34F1FE1C1C5EF36000633BD9 /* Debug */,
 				34F1FE1D1C5EF36000633BD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34F1FE1E1C5EF36000633BD9 /* Build configuration list for PBXNativeTarget "MeditashayneTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34F1FE1F1C5EF36000633BD9 /* Debug */,
-				34F1FE201C5EF36000633BD9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		34F1FE211C5EF36000633BD9 /* Build configuration list for PBXNativeTarget "MeditashayneUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				34F1FE221C5EF36000633BD9 /* Debug */,
-				34F1FE231C5EF36000633BD9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
