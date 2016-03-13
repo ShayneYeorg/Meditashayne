@@ -85,10 +85,6 @@
 		34F1FDFD1C5EF36000633BD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		34F1FE001C5EF36000633BD9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34F1FE021C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneTests.m; sourceTree = "<group>"; };
-		34F1FE0D1C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MeditashayneUITests.m; sourceTree = "<group>"; };
-		34F1FE181C5EF36000633BD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,8 +255,6 @@
 			isa = PBXGroup;
 			children = (
 				34F1FDED1C5EF35F00633BD9 /* Meditashayne */,
-				34F1FE0A1C5EF36000633BD9 /* MeditashayneTests */,
-				34F1FE151C5EF36000633BD9 /* MeditashayneUITests */,
 				34F1FDEC1C5EF35F00633BD9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -294,24 +288,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		34F1FE0A1C5EF36000633BD9 /* MeditashayneTests */ = {
-			isa = PBXGroup;
-			children = (
-				34F1FE0B1C5EF36000633BD9 /* MeditashayneTests.m */,
-				34F1FE0D1C5EF36000633BD9 /* Info.plist */,
-			);
-			path = MeditashayneTests;
-			sourceTree = "<group>";
-		};
-		34F1FE151C5EF36000633BD9 /* MeditashayneUITests */ = {
-			isa = PBXGroup;
-			children = (
-				34F1FE161C5EF36000633BD9 /* MeditashayneUITests.m */,
-				34F1FE181C5EF36000633BD9 /* Info.plist */,
-			);
-			path = MeditashayneUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +319,7 @@
 				TargetAttributes = {
 					34F1FDEA1C5EF35F00633BD9 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = NTNCV84L5J;
 					};
 				};
 			};
@@ -448,6 +425,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -470,6 +448,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "217271b7-a80f-4c75-a1a8-dbe99649a67b";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -491,6 +470,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -506,6 +486,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "217271b7-a80f-4c75-a1a8-dbe99649a67b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -516,12 +497,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Meditashayne/PrefixHeader.pch";
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
 				PRODUCT_NAME = Meditashayne;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -530,12 +514,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Meditashayne/PrefixHeader.pch";
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
 				PRODUCT_NAME = Meditashayne;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
