@@ -341,6 +341,7 @@
     if (loadType == LoadType_First_Load) {
         self.tableView.pullUpToMoreView.canMore = YES;
         [self.articles removeAllObjects];
+        [self.cellHeightDic removeAllObjects];
     }
     
     __weak typeof(self) weakSelf = self;
