@@ -448,7 +448,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "217271b7-a80f-4c75-a1a8-dbe99649a67b";
+				PROVISIONING_PROFILE = "e8b43467-a823-4639-880b-7fd4d0af03e6";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -486,7 +486,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "217271b7-a80f-4c75-a1a8-dbe99649a67b";
+				PROVISIONING_PROFILE = "e8b43467-a823-4639-880b-7fd4d0af03e6";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -503,7 +503,7 @@
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shayneyeorg.meditashayne;
 				PRODUCT_NAME = Meditashayne;
 				PROVISIONING_PROFILE = "";
 			};
@@ -520,7 +520,7 @@
 				INFOPLIST_FILE = Meditashayne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = shayneyeorg.Meditashayne;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shayneyeorg.meditashayne;
 				PRODUCT_NAME = Meditashayne;
 				PROVISIONING_PROFILE = "";
 			};
