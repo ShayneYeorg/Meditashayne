@@ -291,9 +291,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.cellHeightDic.allKeys containsObject:[NSString stringWithFormat:@"%zd", indexPath.row]]) {
+        //如果cellHeightDic里已有这个cell的高度，就返回对应的cell高度
         return [self.cellHeightDic[[NSString stringWithFormat:@"%zd", indexPath.row]] floatValue];
         
     } else {
+        //如果cellHeightDic里没有这个cell的高度，就先随便返回个150
         return 150;
     }
 }
@@ -320,6 +322,7 @@
     MDSAritcleCell *cell = [MDSAritcleCell cellWithTableView:tableView];
     cell.article = self.articles[indexPath.row];
     
+    //如果未计算过这个cell的高度，就调用计算方法计算一次，并把计算结果存入cellHeightDic
     if (![self.cellHeightDic.allKeys containsObject:[NSString stringWithFormat:@"%zd", indexPath.row]]) {
         [self.cellHeightDic setValue:[NSString stringWithFormat:@"%f", [cell calculateCellHeight]] forKey:[NSString stringWithFormat:@"%zd", indexPath.row]];
     }
